@@ -7,6 +7,7 @@
     --color-secondary: oklch(0.8885 0.0258 268.83);
     --color-accent: oklch(0.2531 0.0458 221.92);
     --color-accent-content: white;
+    --color-neutral: oklch(0.9635 0.0149 94.2);
 }
 
 @font-face {

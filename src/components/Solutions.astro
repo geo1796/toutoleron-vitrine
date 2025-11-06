@@ -1,0 +1,158 @@
+---
+import Getty1 from "../assets/photos/gettyimages-108112936-2048x2048.jpg";
+import Getty2 from "../assets/photos/gettyimages-596435227-2048x2048.jpg";
+import Getty3 from "../assets/photos/gettyimages-602981371-2048x2048.jpg";
+import Getty4 from "../assets/photos/gettyimages-1405683451-2048x2048.jpg";
+import EmojiLock from "../assets/emojis/emoji-lock.png";
+import EmojiComputer from "../assets/emojis/emoji-computer.png";
+import EmojiGear from "../assets/emojis/emoji-gear.png";
+import CheckSVG from "../assets/svg/check.svg";
+import ShapeFile from "../assets/svg/shape-file-01.svg";
+import Logo from "../assets/logos/TOUTOLERON_Embleme_blanc.svg";
+import LocationImage from "../assets/images/TOUTOLERON_illu_location_installation_maintenance.png";
+
+interface Props {
+    title: string,
+    description: string,
+    bannerQuote: string,
+    bannerSubtitle: string,
+    footerTitle: string,
+    footerDescription: string,
+}
+
+const {
+    title = "Tout pour libérer ce que la médecine a\n" +
+        "de plus humain.",
+    description = "La digitalisation de la santé et les nouvelles réglementations apportent de nouveaux défis\n" +
+        "aux soignants, souvent vécus comme complexes et contraignants. Chez Toutoléron, nous les aidons à adopter ces\n" +
+        "changements sereinement et à simplifier leur quotidien numérique pour préserver la relation soignant-patient.",
+    bannerQuote = "« 75 % des médecins\n" +
+        "craignent une\n" +
+        "déshumanisation de la\n" +
+        "médecine dans le futur* »",
+    bannerSubtitle = "Avec Toutoléron, les solutions numériques et\n" +
+        "services associés d’e-santé sont pensés pour\n" +
+        "réduire la charge mentale, améliorer les conditions\n" +
+        "d’exercice et renforcer le lien soignant-patient.",
+    footerTitle = "Louez et simplifiez la gestion\n" +
+        "de votre équipement informatique.",
+    footerDescription = "Un matériel toujours performant, livré, installé et renouvelé sans\n" +
+        "contrainte. Tout est inclus dans un abonnement sur-mesure, sans apport\n" +
+        "ni dépôt de garantie.",
+} = Astro.props as Props;
+---
+
+<!-- Solutions section -->
+<section class="py-8 lg:py-16">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 bg-gradient-to-b from-white to-neutral">
+        <!-- Title & intro -->
+        <div class="max-w-3xl p-16 mx-auto text-center">
+            <h2 class="text-4xl sm:text-6xl font-semibold leading-tight whitespace-pre-line">{title}</h2>
+            <p class="mt-5 text-base sm:text-xl text-base-content/70">{description}</p>
+        </div>
+
+        <div class="flex overflow-hidden items-center min-h-[300px] max-h-[700px] rounded-2xl bg-primary bg-center bg-cover bg-no-repeat">
+
+            <!-- Quote banner with collage -->
+            <div class="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+
+                <!-- Left card with quote -->
+                <div class="relative rounded-2xl p-6 sm:p-8">
+                    <Logo class="opacity-25"/>
+
+                    <div class="absolute inset-0 flex flex-col justify-evenly items-center z-10 p-16">
+                        <h3 class="text-2xl sm:text-5xl font-semibold">
+                            {bannerQuote}
+                        </h3>
+                        <p class="mt-4 text-xl font-semibold text-base-content/80 whitespace-pre-line">{bannerSubtitle}</p>
+                        <p class="mt-4 text-lg text-base-content/60">*Étude Doctolib 2022, panel de 640 praticiens</p>
+                    </div>
+                </div>
+
+                <!-- Right collage -->
+                <div class="pr-4 grid grid-cols-2 gap-4 auto-rows-[110px] sm:auto-rows-[140px] lg:auto-rows-[160px]">
+                    <img src={Getty1.src} alt="" class="row-span-2 rounded-xl object-cover w-full h-full shadow-sm"/>
+                    <img src={Getty2.src} alt="" class="row-span-2 rounded-xl object-cover w-full h-full shadow-sm"/>
+                    <img src={Getty3.src} alt="" class="row-span-3 rounded-xl object-cover w-full h-full shadow-sm"/>
+                    <img src={Getty4.src} alt="" class="row-span-3 rounded-xl object-cover w-full h-full shadow-sm"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solutions cards title -->
+        <div class="mt-14 lg:mt-16 text-center">
+            <h3 class="text-3xl sm:text-4xl font-semibold">
+                Vos besoins, <span class="text-accent">un écosystème de solutions.</span>
+            </h3>
+        </div>
+
+        <!-- Three solution cards -->
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="bg-accent text-accent-content rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col items-center justify-center">
+                    <img src={EmojiComputer.src} alt="" class="h-8 w-8"/>
+                    <p class="text-center text-sm sm:text-base font-medium">
+                        Location et maintenance<br/>de votre équipement informatique
+                    </p>
+                </div>
+            </div>
+            <div class="bg-accent text-accent-content rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col items-center justify-center">
+                    <img src={EmojiGear.src} alt="" class="h-8 w-8"/>
+                    <p class="text-center text-sm sm:text-base font-medium">
+                        Paramétrage et formation<br/>au logiciel WEDA
+                    </p>
+                </div>
+            </div>
+            <div class="bg-accent text-accent-content rounded-2xl p-5 sm:p-6 shadow-sm">
+                <div class="flex flex-col items-center justify-center">
+                    <img src={EmojiLock.src} alt="" class="h-8 w-8"/>
+                    <p class="text-center text-sm sm:text-base font-medium">
+                        Cybersécurité et conformité<br/>pour votre cabinet
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer callout -->
+        <div class="p-16 grid lg:grid-cols-2 gap-32 items-center">
+
+            <!-- Illustration block -->
+            <div class="relative">
+                <ShapeFile/>
+                <div class="absolute inset-20 -right-20 flex flex-col justify-center">
+                    <img src={LocationImage.src} alt="Illustration maintenance" class="w-full h-auto block"/>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div>
+                <div class="badge badge-outline badge-primary rounded-full border-2 mb-3 font-semibold">
+                    LOCATION & MAINTENANCE
+                    <!--<span class="inline-flex items-center gap-2 rounded-full bg-accent/10 text-accent px-3 py-1 text-[11px] tracking-wide uppercase">Location & Maintenance</span>-->
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-semibold leading-tight whitespace-pre-line">{footerTitle}</h3>
+                <p class="mt-4 text-base-content/70 whitespace-pre-line">{footerDescription}</p>
+
+                <ul class="mt-6 space-y-3">
+                    <li class="flex items-start gap-3">
+                        <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
+                        <span>Frais de livraison, d’installation et de renouvellement inclus.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
+                        <span>Garantie complète du matériel pendant toute la durée de la location.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
+                        <span>Accès direct et illimité à notre service client.</span>
+                    </li>
+                </ul>
+
+                <div class="mt-8">
+                    <a class="btn btn-accent rounded-full px-6" href="#solutions-location">Je découvre</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

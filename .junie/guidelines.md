@@ -12,7 +12,7 @@ Vitrine Toutoleron is a simple static website to showcase the Toutoleron company
 
 ## Project Structure
 
-- Homepage mockup available at project root `TOUTOLERON_Homepage.pdf`
+- Screenshots from the mockup are available in `screenshots/`. Each Component.png matches the name of its component Component.astro
 - Assets folder placed in `src/assets` contains ui elements from the mockup
 - Css styles placed in `src/assets/app.css`
 
