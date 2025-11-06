@@ -1,0 +1,40 @@
+---
+import "../assets/app.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+    canonical?: string;
+    lang?: string;
+}
+
+const {
+    title = "Toutoléron",
+    description = "Solutions informatiques pour professionnels de santé.",
+    canonical,
+    lang = "fr",
+} = Astro.props as Props;
+---
+<!doctype html>
+<html lang={lang} data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="min-h-dvh bg-base-100 text-base-content">
+<a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
+    Aller au contenu
+</a>
+
+<main id="contenu">
+    <slot />
+</main>
+</body>
+</html>
