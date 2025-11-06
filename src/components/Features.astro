@@ -1,0 +1,52 @@
+---
+import Check from "../assets/svg/check.svg";
+import Shield from "../assets/svg/shape-file-01.svg";
+import File from "../assets/svg/shape-file-02.svg";
+import Plus from "../assets/svg/plus.svg";
+---
+<section id="solutions" class="py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <header class="max-w-2xl">
+      <p class="text-primary font-semibold">Nos solutions</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-2">Un accompagnement complet</h2>
+      <p class="mt-3 text-base-content/70">
+        De l'audit à la maintenance, nous déployons des solutions adaptées aux exigences des professionnels de santé.
+      </p>
+    </header>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="card bg-base-100 border border-base-200 shadow-sm">
+        <div class="card-body">
+          <img src={Shield.src} alt="Sécurité" class="h-10 w-10" />
+          <h3 class="card-title">Sécurité & conformité</h3>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li class="flex gap-2"><img src={Check.src} alt="" class="h-5 w-5"/> Sauvegardes et chiffrement</li>
+            <li class="flex gap-2"><img src={Check.src} alt="" class="h-5 w-5"/> RGPD, HDS, bonnes pratiques</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card bg-base-100 border border-base-200 shadow-sm">
+        <div class="card-body">
+          <img src={File.src} alt="Logiciels" class="h-10 w-10" />
+          <h3 class="card-title">Logiciels & intégrations</h3>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li class="flex gap-2"><img src={Check.src} alt="" class="h-5 w-5"/> Dossiers patients et téléservices</li>
+            <li class="flex gap-2"><img src={Check.src} alt="" class="h-5 w-5"/> Matériel & réseaux compatibles</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card bg-base-100 border border-base-200 shadow-sm">
+        <div class="card-body">
+          <img src={Plus.src} alt="Support" class="h-10 w-10" />
+          <h3 class="card-title">Support & maintenance</h3>
+          <ul class="mt-2 space-y-2 text-sm">
+            <li class="flex gap-2"><img src={Check.src} alt="" class="h-5 w-5"/> Intervention sur site / à distance</li>
+            <li class="flex gap-2"><img src={Check.src} alt="" class="h-5 w-5"/> Supervision proactive</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

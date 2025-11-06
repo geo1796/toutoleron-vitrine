@@ -1,5 +1,6 @@
 ---
 import Logo from "../assets/logos/TOUTOLERON_Logotype_blanc.svg";
+import ArrowMenu from "../assets/svg/arrow-menu.svg";
 ---
 
 <div class="navbar justify-self-center bg-accent rounded-2xl max-w-7xl mt-2">
@@ -14,9 +15,10 @@ import Logo from "../assets/logos/TOUTOLERON_Logotype_blanc.svg";
         <div class="flex items-stretch">
 
             <div class="dropdown dropdown-end">
-                <div tabindex="0" role="button" class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
+                <div tabindex="0" role="button"
+                     class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
                     Solutions
-                    <svg class="h-4 w-4 text-primary" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <img class="h-3 w-3" src={ArrowMenu.src} alt="Toutoleron"/>
                 </div>
                 <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                     <li><a>Soluce 1</a></li>
@@ -25,9 +27,10 @@ import Logo from "../assets/logos/TOUTOLERON_Logotype_blanc.svg";
             </div>
 
             <div class="dropdown dropdown-end">
-                <div tabindex="0" role="button" class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
+                <div tabindex="0" role="button"
+                     class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
                     Ressources
-                    <svg class="h-4 w-4 text-primary" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                    <img class="h-3 w-3" src={ArrowMenu.src} alt="Toutoleron"/>
                 </div>
                 <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                     <li><a>Ressource 1</a></li>

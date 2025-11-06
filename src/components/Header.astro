@@ -1,0 +1,121 @@
+---
+import Logo from "../assets/logos/TOUTOLERON_Logotype_blanc.svg";
+import BackgroundPhotoUrl from "../assets/photos/Header.jpg?url";
+import ArrowMenu from "../assets/svg/arrow-menu.svg";
+import EmojiStar from "../assets/emojis/emoji-star.png";
+import EmojiBrain from "../assets/emojis/emoji-brain.png";
+import EmojiPeople from "../assets/emojis/emoji-people.png";
+import Stars from "../assets/svg/stars.svg";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title =
+        "Simplifier\n" +
+        "l’écosystème\n" +
+        "numérique\n" +
+        "des soignants.",
+    description =
+        "Expert en informatique de santé, Toutoléron\n" +
+        "soutient les soignants avec des solutions fiables et\n" +
+        "efficaces pour gagner en sérénité, libérer du temps\n" +
+        "patient et améliorer le quotidien médical.",
+} = Astro.props as Props;
+---
+
+<!-- Top navigation bar -->
+<div class="min-h-[60vh] bg-center bg-cover bg-no-repeat"
+     style={`background-image: url(${BackgroundPhotoUrl})`}>
+    <div class="mx-auto max-w-7xl p-2">
+        <div class="navbar bg-accent text-accent-content rounded-2xl min-h-14">
+            <div class="ps-6">
+                <a href="/" class="flex items-center" aria-label="Accueil Toutoléron">
+                    <img src={Logo.src} alt="Toutoléron" class="h-7 w-auto"/>
+                </a>
+            </div>
+
+            <div class="flex grow justify-end">
+                <div class="flex items-stretch">
+
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button"
+                             class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
+                            Solutions
+                            <img class="h-3 w-3" src={ArrowMenu.src} alt="Toutoleron"/>
+                        </div>
+                        <ul class="menu text-accent dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                            <li><a>Cabinet médical</a></li>
+                            <li><a>Maisons de santé</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button"
+                             class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
+                            Ressources
+                            <img class="h-3 w-3" src={ArrowMenu.src} alt=""/>
+                        </div>
+                        <ul class="menu text-accent dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                            <li><a>Guides</a></li>
+                            <li><a>Actualités</a></li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="btn ml-6 mr-4 bg-primary border-0 rounded-full shadow-sm">
+                        <span class="px-4">Prendre RDV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero section up to the bottom of the background photo -->
+    <section class="relative overflow-hidden">
+        <!-- Decorative stars, far background -->
+        <div class="absolute inset-0 -z-20 opacity-10 pointer-events-none">
+            <img src={Stars.src} alt="" class="w-full h-full object-cover"/>
+        </div>
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 py-10 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Left: text content -->
+            <div class="order-2 lg:order-1">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] whitespace-pre-line">
+                    {title}
+                </h1>
+                <p class="mt-6 text-lg text-base-content/70 whitespace-pre-line max-w-prose">
+                    {description}
+                </p>
+
+                <!-- Actions -->
+                <div class="mt-8">
+                    <a href="#contact" class="btn btn-primary rounded-full px-6 text-accent font-medium">Ça
+                        m’intéresse</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<!-- Bottom info strip -->
+<div class="bg-secondary border-t border-accent/10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <ul class="flex flex-col justify-center sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-accent/20">
+            <li class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
+                <img src={EmojiStar.src} alt="" class="h-5 w-5"/>
+                <span class="text-sm"><strong>4,8/5</strong> satisfaction client</span>
+            </li>
+            <li class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
+                <img src={EmojiBrain.src} alt="" class="h-5 w-5"/>
+                <span class="text-sm">Expert de référence <strong>WEDA</strong></span>
+            </li>
+            <li class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
+                <img src={EmojiPeople.src} alt="" class="h-5 w-5"/>
+                <span class="text-sm"><strong>+3000</strong> professionnels accompagnés</span>
+            </li>
+        </ul>
+    </div>
+</div>
