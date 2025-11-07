@@ -1,0 +1,79 @@
+---
+interface Card {
+    title: string;
+    description: string;
+    linkLabel?: string;
+    href?: string;
+}
+
+interface Props {
+    title?: string; // main title where part can be highlighted via {highlight}
+    highlight?: string;
+    subtitle?: string;
+    cards?: Card[];
+}
+
+const {
+    title = "+3 000 professionnels",
+    highlight = "nous ont déjà dit oui.",
+    subtitle = "Ce qui les a convaincus ? Un partenaire fiable, réactif et expert.",
+    cards = [
+        {
+            title: "Des experts\nqui parlent\nvotre langage.",
+            description:
+                "Nous sommes professionnels du numérique médical, et chaque solution que nous proposons est pensée pour les contraintes concrètes des praticiens, structures et équipes de soin.",
+            linkLabel: "En savoir plus",
+            href: "#expertise",
+        },
+        {
+            title: "Nous vous\nrépondons\n5j/7 de 6h à 20h.",
+            description:
+                "Une panne, une urgence, un besoin urgent ? Notre équipe support est disponible à tout moment pour vous accompagner, avec réactivité et efficacité.",
+            linkLabel: "En savoir plus",
+            href: "#support",
+        },
+        {
+            title: "Des outils sûrs,\nune activité\nprotégée.",
+            description:
+                "Confidentialité, protection, conformité : nous intégrons les meilleurs standards pour garantir une infrastructure médicale fiable et sécurisée, en continu.",
+            linkLabel: "En savoir plus",
+            href: "#security",
+        },
+    ],
+} = Astro.props as Props;
+---
+
+<section id="capabilities">
+    <div class="bg-info">
+        <div class="mx-auto max-w-7xl py-16 px-8">
+            <!-- Heading -->
+            <div class="text-center max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-normal leading-tight">
+                    {title} <span class="font-semibold">{highlight}</span>
+                </h2>
+                <p class="mt-5 text-base md:text-lg text-base-content">
+                    {subtitle}
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {cards.map((c) => (
+                        <div class="bg-info-content hover:bg-base-100 rounded-2xl p-6 sm:p-8 shadow-sm">
+                            <h3 class="text-2xl md:text-3xl font-semibold leading-snug whitespace-pre-line">
+                                {c.title}
+                            </h3>
+                            <p class="mt-4 text-base-content">
+                                {c.description}
+                            </p>
+                            <div class="mt-8">
+                                <a href={c.href || "#"} class="link link-hover font-medium">
+                                    {c.linkLabel || "En savoir plus"} <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

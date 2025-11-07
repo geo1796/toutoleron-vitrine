@@ -1,0 +1,76 @@
+---
+import ShapeFileSecurity from "../assets/svg/shape-file-03.svg";
+import CheckSVG from "../assets/svg/check.svg";
+import Illustration from "../assets/illustrations/TOUTOLERON_illu_cybersecurite.png";
+
+interface Props {
+    badge?: string;
+    titleLine1?: string;
+    titleLine2?: string;
+    description?: string;
+    bullets?: string[];
+    ctaPrimary?: string;
+}
+
+const {
+    badge = "CYBERSÉCURITÉ & CONFORMITÉ",
+    titleLine1 = "Protégez vos données et votre",
+    titleLine2 = "activité, simplement.",
+    description =
+        "Une solution de cybersécurité complète, pensée pour les professionnels de santé. Surveillance, protection et accompagnement inclus dans une offre clé en main.",
+    bullets = [
+        "Audit initial et sécurisation de votre environnement numérique",
+        "Protection continue contre les intrusions et les logiciels malveillants",
+        "Accompagnement personnalisé et support dédié",
+    ],
+    ctaPrimary = "Je découvre",
+} = Astro.props as Props;
+---
+
+<section id="security">
+    <div class="mx-auto max-w-7xl py-16 px-8 bg-neutral">
+
+        <div class="p-16 grid lg:grid-cols-2 gap-16 md:gap-32 items-center">
+            <!-- Left illustration -->
+            <div class="hidden lg:block relative">
+                <img src={ShapeFileSecurity.src} alt="" class="w-full h-auto" />
+                <div class="absolute inset-20 left-10 -right-20">
+                    <img
+                            src={Illustration.src}
+                            alt="Cybersécurité et conformité pour les soignants"
+                            class="w-full h-full block"
+                    />
+                </div>
+            </div>
+
+            <!-- Right content -->
+            <div class="order-2">
+                <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
+                    {badge}
+                </div>
+
+                <h2 class="text-4xl sm:text-6xl font-semibold leading-tight">
+                    {titleLine1}<br/>
+                    activité, <span class="text-accent">simplement.</span>
+                </h2>
+
+                <p class="mt-6 text-base sm:text-xl text-base-content/70">
+                    {description}
+                </p>
+
+                <ul class="mt-6 space-y-3">
+                    {bullets.map((item) => (
+                            <li class="flex items-start gap-3">
+                                <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
+                                <span>{item}</span>
+                            </li>
+                    ))}
+                </ul>
+
+                <div class="mt-8">
+                    <a class="btn btn-primary rounded-full px-6" href="#security-details">{ctaPrimary}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

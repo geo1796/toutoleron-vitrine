@@ -8,6 +8,8 @@
     --color-accent: oklch(0.2531 0.0458 221.92);
     --color-accent-content: white;
     --color-neutral: oklch(0.9635 0.0149 94.2);
+    --color-info: oklch(0.8881 0.0245 267.91);
+    --color-info-content: oklch(0.9212 0.0188 265.98);
 }
 
 @font-face {

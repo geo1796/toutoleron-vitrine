@@ -27,11 +27,11 @@ const {
 ---
 
 <!-- Top navigation bar -->
-<div class="min-h-[60vh] bg-center bg-cover bg-no-repeat"
+<div class="bg-center bg-cover bg-no-repeat"
      style={`background-image: url(${BackgroundPhotoUrl})`}>
     <div class="mx-auto max-w-7xl p-2">
-        <div class="navbar bg-accent text-accent-content rounded-2xl min-h-14">
-            <div class="ps-6">
+        <div class="navbar flex-col gap-4 md:flex-row md:gap-0 bg-accent text-accent-content rounded-2xl min-h-14">
+            <div class="md:ps-6">
                 <a href="/" class="flex items-center" aria-label="Accueil Toutoléron">
                     <img src={Logo.src} alt="Toutoléron" class="h-7 w-auto"/>
                 </a>
@@ -40,7 +40,7 @@ const {
             <div class="flex grow justify-end">
                 <div class="flex items-stretch">
 
-                    <div class="dropdown dropdown-end">
+                    <div class="dropdown">
                         <div tabindex="0" role="button"
                              class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
                             Solutions
@@ -52,7 +52,7 @@ const {
                         </ul>
                     </div>
 
-                    <div class="dropdown dropdown-end">
+                    <div class="dropdown">
                         <div tabindex="0" role="button"
                              class="btn btn-link text-accent-content no-underline hover:no-underline focus:no-underline">
                             Ressources
@@ -64,8 +64,8 @@ const {
                         </ul>
                     </div>
 
-                    <a href="#contact" class="btn ml-6 mr-4 bg-primary border-0 rounded-full shadow-sm">
-                        <span class="px-4">Prendre RDV</span>
+                    <a href="#contact" class="btn bg-primary border-0 rounded-full shadow-sm">
+                        <span class="sm:px-4">Prendre RDV</span>
                     </a>
                 </div>
             </div>
@@ -85,7 +85,7 @@ const {
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] whitespace-pre-line">
                     {title}
                 </h1>
-                <p class="mt-6 text-lg text-base-content/70 whitespace-pre-line max-w-prose">
+                <p class="mt-6 text-lg text-base-content whitespace-pre-line max-w-prose">
                     {description}
                 </p>
 

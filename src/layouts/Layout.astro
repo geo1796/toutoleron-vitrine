@@ -18,15 +18,18 @@ const {
 <!doctype html>
 <html lang={lang} data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content={Astro.generator}/>
 
     <title>{title}</title>
-    <meta name="description" content={description} />
-    {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="description" content={description}/>
+    {canonical &&
+            <link rel="canonical" href={canonical}/>}
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+
+    <script type="module" src="https://unpkg.com/cally"/>
 </head>
 <body class="justify-self-center min-h-dvh max-w-7xl bg-base-100 text-base-content">
 <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
@@ -34,7 +37,7 @@ const {
 </a>
 
 <main id="contenu">
-    <slot />
+    <slot/>
 </main>
 </body>
 </html>

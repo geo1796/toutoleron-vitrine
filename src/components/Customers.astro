@@ -1,0 +1,87 @@
+---
+import QuoteSVG from "../assets/svg/quotation marks.svg";
+import StarsSVG from "../assets/svg/stars.svg";
+import Arrow02 from "../assets/svg/arrow-02.svg";
+import AvatarPhoto from "../assets/photos/gettyimages-1343480454-2048x2048.jpg";
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  name?: string;
+  role?: string;
+  quote?: string;
+  ctaLabel?: string;
+}
+
+const {
+  heading = "Nos clients médecins\n\nen parlent le mieux.",
+  subheading = "Leur quotidien a changé.\nIls nous le disent, simplement.",
+  name = "Dr. Sarah Dubois",
+  role = "Médecin généraliste",
+  quote =
+    "Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !",
+  ctaLabel = "Lire le témoignage",
+} = Astro.props as Props;
+---
+
+<section id="customers" class="bg-primary/80">
+  <div class="mx-auto max-w-7xl px-8 py-16">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <!-- Left intro -->
+      <div class="text-accent-content">
+        <h2 class="text-4xl md:text-6xl leading-tight font-normal whitespace-pre-line">
+          {heading}
+        </h2>
+        <p class="mt-6 text-base text-accent-content/80 whitespace-pre-line max-w-md">
+          {subheading}
+        </p>
+
+        <!-- Nav buttons (visual only) -->
+        <div class="mt-8 flex gap-4">
+          <button aria-label="Précédent" class="btn btn-circle bg-accent text-accent-content border-none">
+            <Arrow02 class="w-5 h-5 rotate-180" />
+          </button>
+          <button aria-label="Suivant" class="btn btn-circle bg-accent text-accent-content border-none">
+            <Arrow02 class="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Right testimonial card -->
+      <div class="relative">
+        <div class="rounded-2xl bg-neutral p-8 md:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+          <!-- Decorative quotation marks -->
+          <div class="pointer-events-none absolute -right-4 top-6 opacity-20">
+            <QuoteSVG class="w-36 h-auto" />
+          </div>
+
+          <div class="relative z-10">
+            <h3 class="text-2xl md:text-3xl font-semibold">{name}</h3>
+            <div class="mt-2 inline-flex rounded-full bg-primary/20 text-primary font-semibold px-4 py-1 text-sm">
+              {role}
+            </div>
+
+            <p class="mt-5 text-base md:text-lg leading-relaxed max-w-xl">
+              {quote}
+            </p>
+
+            <a href="#temoignage" class="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-2">
+              {ctaLabel}
+              <Arrow02 class="w-5 h-5" />
+            </a>
+
+            <!-- Bottom row with avatar and stars -->
+            <div class="mt-8 flex items-center justify-between">
+              <img
+                src={AvatarPhoto.src}
+                alt="Portrait client"
+                class="h-16 w-16 rounded-xl object-cover"
+              />
+              <StarsSVG class="h-6 w-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

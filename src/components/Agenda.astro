@@ -1,0 +1,129 @@
+---
+import Logo from "../assets/logos/TOUTOLERON_Avatar.svg";
+
+interface Props {
+    title?: string;
+    subtitle?: string;
+    duration?: string;
+    monthLabel?: string;
+    selectedDay?: number;
+    timezoneLabel?: string;
+    times?: string[];
+}
+
+const {
+    title = "Échangeons ensemble ?",
+    subtitle = "Prenez rendez-vous et on s'occupe de vous.",
+    duration = "15 min",
+    monthLabel = "septembre 2025",
+    selectedDay = 24,
+    timezoneLabel = "UTC +02:00 Heure normale d’Europe centrale",
+    times = ["16:15", "16:30", "17:30"],
+} = Astro.props as Props;
+
+const daysOfWeek = ["LUN.", "MAR.", "MER.", "JEU.", "VEN.", "SAM.", "DIM."];
+const totalDays = 30; // mock agenda like the screenshot
+---
+
+<section id="agenda">
+    <div class="mx-auto max-w-7xl py-16 px-8">
+        <!-- Heading -->
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-normal leading-tight">
+                Échangeons <span class="font-semibold">ensemble</span> ?
+            </h2>
+            <p class="mt-5 text-base md:text-lg text-base-content/70">{subtitle}</p>
+        </div>
+
+        <!-- Agenda card -->
+        <div class="mt-10 grid lg:grid-cols-2 items-stretch">
+
+            <!-- Left: calendar mock -->
+            <div class="bg-accent text-accent-content p-8 md:p-10 lg:p-12 rounded-2xl">
+                <div class="flex flex-col items-center gap-6">
+                    <Logo class="h-24 w-24 opacity-90"/>
+                    <div class="text-center">
+                        <p class="text-xl md:text-2xl font-semibold">Toutoleron</p>
+                        <!--<div class="mt-2 flex items-center gap-2 justify-center text-accent-content/90">-->
+                        <!--  <span class="opacity-70">‹</span>-->
+                        <!--  <span class="font-semibold lowercase">{monthLabel}</span>-->
+                        <!--  <span class="opacity-70">›</span>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+
+                <div class="flex justify-center mt-8">
+                    <calendar-date class="cally bg-accent"
+                                   locale="fr-FR">
+                        <svg aria-label="Previous" class="fill-primary size-6" slot="previous"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                        </svg>
+                        <svg aria-label="Next" class="fill-primary size-6" slot="next"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24">
+                            <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                        </svg>
+                        <calendar-month></calendar-month>
+                    </calendar-date>
+                </div>
+
+                <!-- Weekday headers -->
+                <!--<div class="mt-8 grid grid-cols-7 text-xs md:text-sm uppercase tracking-wide text-accent-content/70">-->
+                <!--  {daysOfWeek.map((d) => (-->
+                <!--    <div class="text-center py-2">{d}</div>-->
+                <!--  ))}-->
+                <!--</div>-->
+
+                <!-- Days grid (static layout like the mockup: 1 starts on Monday) -->
+                <!--<div class="mt-2 grid grid-cols-7 gap-y-3">-->
+                <!--  {Array.from({ length: totalDays }, (_, i) => i + 1).map((day) => (-->
+                <!--    <div class="flex items-center justify-center py-2">-->
+                <!--      {day === selectedDay ? (-->
+                <!--        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-base-100 text-accent font-semibold shadow-sm">{day}</span>-->
+                <!--      ) : (-->
+                <!--        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full text-accent-content/60">{day}</span>-->
+                <!--      )}-->
+                <!--    </div>-->
+                <!--  ))}-->
+                <!--  &lt;!&ndash; Last empty cells for alignment (if needed) &ndash;&gt;-->
+                <!--</div>-->
+            </div>
+
+            <!-- Right: time selection -->
+            <div class="bg-neutral rounded-2xl p-8 md:p-10 lg:p-12 flex flex-col">
+                <div>
+                    <p class="font-semibold">Durée du rendez-vous</p>
+                    <div class="mt-3">
+                        <div class="inline-flex rounded-xl bg-primary/20 text-primary font-semibold px-4 py-2">
+                            {duration}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <p class="font-semibold">Quelle heure vous convient le mieux ?</p>
+                    <p class="text-sm text-base-content/70 mt-1">
+                        Affichage des heures pour le {selectedDay} {monthLabel}
+                    </p>
+
+                    <div class="mt-4">
+                        <label class="sr-only" for="timezone">Fuseau horaire</label>
+                        <select id="timezone" class="select select-bordered w-full rounded-xl text-sm">
+                            <option selected>{timezoneLabel}</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-4 space-y-3">
+                        {times.map((t) => (
+                                <button class="btn btn-ghost border border-base-300 w-full justify-center rounded-xl">
+                                    {t}
+                                </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -3,10 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import Header from "../components/Header.astro";
 import Solutions from "../components/Solutions.astro";
 import Weda from "../components/Weda.astro";
+import Security from "../components/Security.astro";
+import Branding from "../components/Branding.astro";
+import Capabilities from "../components/Capabilities.astro";
+import Agenda from "../components/Agenda.astro";
+import Customers from "../components/Customers.astro";
 ---
 
 <Layout>
-  <Header />
-  <Solutions />
-  <Weda />
+    <Header/>
+    <div class="bg-gradient-to-b from-white to-neutral">
+        <Branding/>
+        <Solutions/>
+    </div>
+    <div class="h-[64px]"></div>
+    <Weda/>
+    <div class="h-[64px]"></div>
+    <Security/>
+    <Capabilities/>
+    <Agenda/>
+    <Customers/>
 </Layout>

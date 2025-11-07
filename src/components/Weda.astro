@@ -29,12 +29,12 @@ const {
 } = Astro.props as Props;
 ---
 
-<section id="solutions-weda" class="py-8 lg:py-16">
+<section id="solutions-weda">
   <div class="mx-auto max-w-7xl pb-16 px-8">
     <div class="grid lg:grid-cols-2 gap-10 items-center">
       <!-- Left content -->
       <div>
-        <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold">
+        <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
           {badge}
         </div>
 
@@ -63,7 +63,7 @@ const {
       </div>
 
       <!-- Right illustration -->
-      <div class="relative">
+      <div class="hidden lg:block relative">
         <ShapeFileWeda class="w-full h-auto" />
         <div class="absolute inset-0 -translate-x-10 translate-y-25">
           <img
