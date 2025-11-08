@@ -4,6 +4,7 @@ import Getty2 from "../assets/photos/gettyimages-596435227-2048x2048.jpg";
 import Getty3 from "../assets/photos/gettyimages-602981371-2048x2048.jpg";
 import Getty4 from "../assets/photos/gettyimages-1405683451-2048x2048.jpg";
 import Logo from "../assets/logos/TOUTOLERON_Embleme_blanc.svg";
+import Marquee from "./Marquee.astro";
 
 interface Props {
     title?: string,
@@ -40,32 +41,44 @@ const {
             <p class="mt-5 text-base md:text-xl text-base-content/70">{description}</p>
         </div>
 
-        <div class="flex overflow-hidden items-center rounded-2xl bg-primary bg-center bg-cover bg-no-repeat">
+        <div class="flex overflow-hidden my-4 items-center rounded-2xl bg-primary bg-center bg-cover bg-no-repeat">
 
             <!-- Quote banner with collage -->
-            <div class="grid md:grid-cols-2 gap-6 lg:gap-10 items-stretch">
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-10 items-stretch h-[600px]">
 
                 <!-- Left card with quote -->
-                <div class="relative rounded-2xl p-6 sm:p-8 h-full min-h-[420px] md:min-h-0">
+                <div class="relative rounded-2xl p-6 sm:p-8 h-[600px]">
 
-                    <img src={Logo.src} alt="" class="w-full h-auto opacity-25" />
+                    <img src={Logo.src} alt="" class="w-full h-auto opacity-25"/>
 
-                    <div class="md:absolute md:inset-0 md:p-16 flex flex-col justify-evenly items-center z-10">
-                        <h3 class="text-2xl lg:text-5xl font-semibold">
+                    <div class="md:absolute md:inset-0 md:px-16 flex flex-col justify-evenly items-center z-10">
+                        <h3 class="text-3xl font-semibold">
                             {bannerQuote}
                         </h3>
-                        <p class="mt-4 text-lg lg:text-xl font-semibold text-base-content/80 md:whitespace-pre-line">{bannerSubtitle}</p>
+                        <p class="mt-4 text-lg font-semibold text-base-content/80 md:whitespace-pre-line">{bannerSubtitle}</p>
                         <p class="mt-4 text-lg text-base-content/60">*Étude Doctolib 2022, panel de 640 praticiens</p>
                     </div>
 
                 </div>
 
                 <!-- Right collage -->
-                <div class="hidden md:grid grid-cols-2 gap-4 auto-rows-[110px] sm:auto-rows-[140px] lg:auto-rows-[160px]">
-                    <img src={Getty1.src} alt="" class="row-span-2 rounded-xl object-cover w-full h-full shadow-sm"/>
-                    <img src={Getty2.src} alt="" class="row-span-2 rounded-xl object-cover w-full h-full shadow-sm"/>
-                    <img src={Getty3.src} alt="" class="row-span-3 rounded-xl object-cover w-full h-full shadow-sm"/>
-                    <img src={Getty4.src} alt="" class="row-span-3 rounded-xl object-cover w-full h-full shadow-sm"/>
+                <div class="hidden overflow-hidden md:grid grid-cols-2 gap-4 pr-4">
+                    <Marquee axis="y" speed="18s" class="bg-primary">
+                        <img src={Getty1.src} alt=""
+                             class="block h-[380px] w-full object-cover rounded-2xl"/>
+                        <div class="h-[20px]"></div>
+                        <img src={Getty2.src} alt=""
+                             class="block h-[180px] w-full object-cover rounded-2xl"/>
+                        <div class="h-[20px]"></div>
+                    </Marquee>
+                    <Marquee axis="y" speed="18s" class="bg-primary transform rotate-x-180">
+                        <img src={Getty3.src} alt=""
+                             class="block h-[180px] w-full object-cover rounded-2xl transform rotate-x-180"/>
+                        <div class="h-[20px]"></div>
+                        <img src={Getty4.src} alt=""
+                             class="block h-[380px] w-full object-cover object-[80%_center] rounded-2xl transform rotate-x-180"/>
+                        <div class="h-[20px]"></div>
+                    </Marquee>
                 </div>
             </div>
         </div>

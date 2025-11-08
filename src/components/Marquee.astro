@@ -1,0 +1,44 @@
+---
+// MarqueeSlot.astro
+export interface Props {
+    axis?: 'y' | 'x';
+    speed?: string;
+    class?: string;
+}
+const {axis = 'y', speed = '18s', class: klass = ''} = Astro.props;
+const isY = axis === 'y';
+---
+<div class={`relative overflow-hidden ${klass}`}>
+    <div
+            style={`--speed:${speed}`}
+            class={isY
+                ? "grid will-change-transform animate-[scrollY_var(--speed)_linear_infinite]"
+                : "flex will-change-transform whitespace-nowrap animate-[scrollX_var(--speed)_linear_infinite]"
+            }
+            aria-hidden="true"
+    >
+        <slot/>       <!-- your items -->
+        <slot/>       <!-- duplicated once -->
+    </div>
+</div>
+
+<style>
+    @keyframes scrollY {
+        to {
+            transform: translateY(-50%)
+        }
+    }
+
+    @keyframes scrollX {
+        to {
+            transform: translateX(-50%)
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .animate-\[scrollY_var\(--speed\)_linear_infinite\],
+        .animate-\[scrollX_var\(--speed\)_linear_infinite\] {
+            animation: none !important
+        }
+    }
+</style>
