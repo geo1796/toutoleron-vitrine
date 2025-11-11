@@ -1,0 +1,31 @@
+---
+import Team0 from '../assets/photos/Alexandre.jpeg'
+import Team1 from '../assets/photos/Équipe-01.png'
+import Team2 from '../assets/photos/Équipe-02.png'
+import Team3 from '../assets/photos/Équipe-03.png'
+import Team4 from '../assets/photos/Équipe-04.png'
+import Team5 from '../assets/photos/Équipe-05.png'
+
+const teamPictures: ImageMetadata[] = [
+    Team0, Team1, Team2, Team3, Team4, Team5,
+];
+---
+
+<section id="team">
+    <div class="flex flex-col gap-5 items-center justify-center w-full py-8 px-2 text-center">
+        <h2 class="text-3xl">Toujours disponibles <span class="font-semibold">pour vous aider</span></h2>
+        <p class="py-4">Une équipe proche des soignants, qui comprend vos enjeux et vous accompagne à chaque étape</p>
+        <button class="btn btn-primary rounded-full">Rencontrez notre équipe</button>
+
+        <div class="carousel gap-2 mt-16">
+            {
+                teamPictures.map((teamPicture, index) => (
+                        <div id={`team${index}`}
+                             class="carousel-item">
+                            <img src={teamPicture.src} alt="Team member" class="w-60 h-auto rounded-2xl object-cover"/>
+                        </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

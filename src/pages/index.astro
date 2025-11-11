@@ -8,7 +8,9 @@ import Branding from "../components/Branding.astro";
 import Capabilities from "../components/Capabilities.astro";
 import Agenda from "../components/Agenda.astro";
 import CustomerTestimonials from "../components/CustomerTestimonials.astro";
-import ShapeFileUrl from "../assets/svg/shape-file-04.svg?url";
+import Team from "../components/Team.astro";
+import QnA from "../components/Q&A.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
@@ -25,6 +27,10 @@ import ShapeFileUrl from "../assets/svg/shape-file-04.svg?url";
     <Capabilities/>
     <Agenda/>
     <CustomerTestimonials/>
-    <div class="h-140 bg-center bg-cover bg-no-repeat"
-         style={`background-image: url(${ShapeFileUrl})`}/>
+    <div class="bg-gradient-to-b from-neutral to-white">
+        <div class="h-[16px] lg:h-[32px]"/>
+        <Team/>
+    </div>
+    <QnA/>
+    <Footer/>
 </Layout>
