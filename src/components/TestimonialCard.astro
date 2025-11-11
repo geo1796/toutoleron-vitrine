@@ -1,5 +1,4 @@
 ---
-import QuoteSVG from "../assets/svg/quotation marks.svg";
 import ShapeFileSVG from "../assets/svg/shape-file-04-bis.svg";
 import Arrow1 from "../assets/svg/arrow-01.svg";
 
@@ -14,15 +13,11 @@ const {
     photo, occupation, quote, fullName
 } = Astro.props as Props;
 ---
-<div class="relative inline-block">
+<div class="relative inline-block min-h-100">
 
-    <img src={ShapeFileSVG.src} class="block min-w-25 w-[full] min-h-90 lg:min-h-120 h-auto" alt=""/>
+    <img src={ShapeFileSVG.src} class="block min-w-25 w-[full] min-h-80 lg:min-h-120 h-auto" alt=""/>
 
     <div class="absolute inset-0 p-4">
-        <!-- Decorative quotation marks -->
-        <div class="pointer-events-none absolute right-4 top-6 opacity-20">
-            <img class="w-24 lg:w-36 h-auto" src={QuoteSVG.src} alt=""/>
-        </div>
 
         <div class="relative">
             <h3 class="text-xl lg:text-2xl font-semibold">{fullName}</h3>
@@ -30,7 +25,7 @@ const {
                 {occupation}
             </div>
 
-            <p class="lg:mt-5 lg:text-lg">
+            <p class="mt-2 lg:mt-5 lg:text-lg">
                 {quote}
             </p>
 
