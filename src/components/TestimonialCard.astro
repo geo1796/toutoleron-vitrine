@@ -1,0 +1,51 @@
+---
+import QuoteSVG from "../assets/svg/quotation marks.svg";
+import ShapeFileSVG from "../assets/svg/shape-file-04-bis.svg";
+import Arrow1 from "../assets/svg/arrow-01.svg";
+
+interface Props {
+    photo: ImageMetadata;
+    fullName: string,
+    occupation: string,
+    quote: string,
+}
+
+const {
+    photo, occupation, quote, fullName
+} = Astro.props as Props;
+---
+<div class="relative inline-block">
+
+    <img src={ShapeFileSVG.src} class="block min-w-25 w-[full] min-h-90 lg:min-h-120 h-auto" alt=""/>
+
+    <div class="absolute inset-0 p-4">
+        <!-- Decorative quotation marks -->
+        <div class="pointer-events-none absolute right-4 top-6 opacity-20">
+            <img class="w-24 lg:w-36 h-auto" src={QuoteSVG.src} alt=""/>
+        </div>
+
+        <div class="relative">
+            <h3 class="text-xl lg:text-2xl font-semibold">{fullName}</h3>
+            <div class="badge badge-fill badge-neutral rounded-full border-2 text-primary font-semibold text-xs sm:text-sm md:text-md">
+                {occupation}
+            </div>
+
+            <p class="lg:mt-5 lg:text-lg">
+                {quote}
+            </p>
+
+            <a href="#temoignage"
+               class="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-2">
+                Lire le témoignage
+                <Arrow1 class="w-5 h-5"/>
+            </a>
+
+            <div class="block relative h-32 lg:h-48 w-32 lg:w-48 overflow-hidden rounded-2xl mt-2 lg:mt-8">
+                <img src={photo.src}
+                     alt="Portrait client"
+                     class="absolute inset-0 h-full w-full object-cover scale-200 object-[50%_0%] [transform-origin:50%_0%]"/>
+            </div>
+
+        </div>
+    </div>
+</div>

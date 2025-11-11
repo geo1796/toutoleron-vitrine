@@ -7,21 +7,24 @@ import Security from "../components/Security.astro";
 import Branding from "../components/Branding.astro";
 import Capabilities from "../components/Capabilities.astro";
 import Agenda from "../components/Agenda.astro";
-import Customers from "../components/Customers.astro";
+import CustomerTestimonials from "../components/CustomerTestimonials.astro";
+import ShapeFileUrl from "../assets/svg/shape-file-04.svg?url";
 ---
 
 <Layout>
     <Header/>
-    <div class="h-[32px] lg:h-[64px]"></div>
+    <div class="h-[16px] lg:h-[32px]"/>
     <div class="bg-gradient-to-b from-white to-neutral">
         <Branding/>
         <Solutions/>
     </div>
-    <div class="h-[64px]"></div>
+    <div class="h-[16px] lg:h-[32px]"/>
     <Weda/>
-    <div class="h-[64px]"></div>
+    <div class="h-[16px] lg:h-[32px]"/>
     <Security/>
     <Capabilities/>
     <Agenda/>
-    <Customers/>
+    <CustomerTestimonials/>
+    <div class="h-140 bg-center bg-cover bg-no-repeat"
+         style={`background-image: url(${ShapeFileUrl})`}/>
 </Layout>

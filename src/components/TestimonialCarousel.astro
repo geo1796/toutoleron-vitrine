@@ -1,0 +1,58 @@
+---
+import PhotoDrDubois from "../assets/photos/gettyimages-1806608544-2048x2048.jpg";
+import TestimonialCard from "./TestimonialCard.astro";
+import Arrow2 from "../assets/svg/arrow-02.svg";
+
+class CustomerTestimonial {
+    constructor(public photo: ImageMetadata, public name: string, public occupation: string, public quote: string) {
+        this.photo = photo;
+        this.name = name;
+        this.occupation = occupation;
+        this.quote = quote;
+    };
+}
+
+const testimonials: CustomerTestimonial[] = [
+    new CustomerTestimonial(
+        PhotoDrDubois,
+        'Dr. Sarah Dubois',
+        'Médecin généraliste',
+        'Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !',
+    ),
+    new CustomerTestimonial(
+        PhotoDrDubois,
+        'Dr. Sarah Dubois',
+        'Médecin généraliste',
+        'Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !',
+    ),
+    new CustomerTestimonial(
+        PhotoDrDubois,
+        'Dr. Sarah Dubois',
+        'Médecin généraliste',
+        'Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !',
+    ),
+];
+---
+
+<div class="flex carousel w-full h-full overflow-hidden">
+    {
+        testimonials.map((testimonial, index) => (
+                <div id={`slide${index}`} class="carousel-item w-full h-full">
+                    <div class="flex flex-col justify-center items-center">
+                        <div class="flex gap-4 lg:p-2">
+                            {index > 0 &&
+                                    <a href={`#slide${index - 1}`}>
+                                        <img class="h-16 w-16" src={Arrow2.src} alt="Précédent"/>
+                                    </a>}
+                            {index < testimonials.length - 1 &&
+                                    <a href={`#slide${index + 1}`}>
+                                        <img class="h-16 w-16 rotate-y-180" src={Arrow2.src} alt="Suivant"/>
+                                    </a>}
+                        </div>
+                        <TestimonialCard fullName={testimonial.name} occupation={testimonial.occupation}
+                                         quote={testimonial.quote} photo={testimonial.photo}/>
+                    </div>
+                </div>
+        ))
+    }
+</div>

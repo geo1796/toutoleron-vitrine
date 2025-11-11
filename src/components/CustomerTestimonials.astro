@@ -1,0 +1,49 @@
+---
+import Logo from "../assets/logos/TOUTOLERON_Embleme_blanc.svg";
+import TestimonialCarousel from "./TestimonialCarousel.astro";
+
+interface Props {
+    heading?: string;
+    subheading?: string;
+    name?: string;
+    role?: string;
+    quote?: string;
+    ctaLabel?: string;
+}
+
+const {
+    heading = "Nos clients médecins\nen parlent le mieux.",
+    subheading = "Leur quotidien a changé.\nIls nous le disent, simplement.",
+    name = "Dr. Sarah Dubois",
+    role = "Médecin généraliste",
+    quote =
+        "Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !",
+    ctaLabel = "Lire le témoignage",
+} = Astro.props as Props;
+---
+
+<section id="customer-testimonials" class="block bg-primary/80">
+    <div class="mx-auto px-8 lg:py-16 lg:max-h-200">
+        <div class="grid lg:grid-cols-2 lg:gap-10 items-center">
+            <!-- Left intro -->
+            <div class="relative flex justify-center items-center">
+
+                <img src={Logo.src} alt="Logo" class="w-auto lg:w-full h-[250px] lg:h-auto opacity-25"/>
+
+                <div class="absolute inset-0">
+                    <div class="h-full flex flex-col items-center justify-center">
+                        <h2 class="text-2xl lg:text-6xl leading-tight font-normal whitespace-pre-line">
+                            {heading}
+                        </h2>
+                        <p class="mt-6 whitespace-pre-line">
+                            {subheading}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <TestimonialCarousel/>
+        </div>
+    </div>
+</section>
