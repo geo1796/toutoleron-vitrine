@@ -7,7 +7,6 @@ import Logo from "../assets/logos/TOUTOLERON_Embleme_blanc.svg";
 import Marquee from "./Marquee.astro";
 
 interface Props {
-    title?: string,
     description?: string,
     bannerQuote?: string,
     bannerSubtitle?: string,
@@ -16,8 +15,6 @@ interface Props {
 }
 
 const {
-    title = "Tout pour libérer ce que la médecine a " +
-        "de plus humain.",
     description = "La digitalisation de la santé et les nouvelles réglementations apportent de nouveaux défis " +
         "aux soignants, souvent vécus comme complexes et contraignants. Chez Toutoléron, nous les aidons à adopter ces " +
         "changements sereinement et à simplifier leur quotidien numérique pour préserver la relation soignant-patient.",
@@ -37,8 +34,11 @@ const {
     <div class="px-6">
         <!-- Title & intro -->
         <div class="max-w-3xl p-16 mx-auto text-center">
-            <h2 class="text-6xl font-semibold leading-tight whitespace-pre-line">{title}</h2>
-            <p class="mt-5 text-xl text-base-content/70">{description}</p>
+            <h2 class="text-6xl leading-tight whitespace-pre-line">Tout pour libérer ce que la médecine <span
+                    class="font-semibold">a de plus humain.</span></h2>
+            <p class="mt-5 text-xl text-base-content">
+                {description}
+            </p>
         </div>
 
         <div class="overflow-hidden my-4 items-center rounded-2xl bg-primary bg-center bg-cover bg-no-repeat">
@@ -52,7 +52,7 @@ const {
                     <img src={Logo.src} alt="Logo" class="w-full h-auto opacity-25"/>
 
                     <div class="absolute inset-0 px-8 md:px-16 flex flex-col justify-evenly items-center z-10">
-                        <h3 class="text-xl md:text-2xl font-semibold">
+                        <h3 class="text-2xl lg:text-5xl font-semibold">
                             {bannerQuote}
                         </h3>
                         <p class="mt-4 text-lg font-semibold text-base-content/80 whitespace-pre-line">{bannerSubtitle}</p>
@@ -90,8 +90,11 @@ const {
     <div class="px-4">
         <!-- Title & intro -->
         <div class="mx-auto text-center">
-            <h2 class="text-3xl font-semibold leading-tight whitespace-pre-line">{title}</h2>
-            <p class="mt-5 text-xl text-base-content/70">{description}</p>
+            <h2 class="text-3xl leading-tight whitespace-pre-line">Tout pour libérer ce que la médecine a <span
+                    class="font-semibold">de plus humain.</span></h2>
+            <p class="mt-5 text-xl text-base-content">
+                {description}
+            </p>
         </div>
 
         <div class="my-4 pb-4 rounded-2xl bg-primary bg-center bg-cover bg-no-repeat">
@@ -99,7 +102,7 @@ const {
             <!-- Quote banner with collage -->
             <div class="flex items-center justify-center">
 
-                <div class="relative rounded-2xl p-6">
+                <div class="relative rounded-2xl p-2">
 
                     <img src={Logo.src} alt="" class="w-full h-auto opacity-25"/>
 
@@ -107,8 +110,8 @@ const {
                         <h3 class="text-xl font-semibold">
                             {bannerQuote}
                         </h3>
-                        <p class="mt-4 text-md font-semibold text-base-content/80 whitespace-pre-line">{bannerSubtitle}</p>
-                        <p class="mt-4 text-md text-base-content/60">*Étude Doctolib 2022, panel de 640 praticiens</p>
+                        <p class="mt-2 text-md font-semibold text-base-content/80 whitespace-pre-line">{bannerSubtitle}</p>
+                        <p class="mt-2 text-sm text-base-content/60">*Étude Doctolib 2022, panel de 640 praticiens</p>
                     </div>
 
                 </div>

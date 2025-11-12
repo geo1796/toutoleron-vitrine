@@ -6,31 +6,36 @@ import Weda from "../components/Weda.astro";
 import Security from "../components/Security.astro";
 import Branding from "../components/Branding.astro";
 import Capabilities from "../components/Capabilities.astro";
-import Agenda from "../components/Agenda.astro";
 import CustomerTestimonials from "../components/CustomerTestimonials.astro";
 import Team from "../components/Team.astro";
 import QnA from "../components/Q&A.astro";
 import Footer from "../components/Footer.astro";
+import Booking from "../components/Booking.astro";
 ---
 
 <Layout>
     <Header/>
-    <div class="h-[16px] lg:h-[32px]"/>
+    <div class="h-8"/>
     <div class="bg-gradient-to-b from-white to-neutral">
         <Branding/>
         <Solutions/>
     </div>
-    <div class="h-[16px] lg:h-[32px]"/>
+    <div class="h-8"/>
     <Weda/>
-    <div class="h-[16px] lg:h-[32px]"/>
+    <div class="h-8"/>
     <Security/>
     <Capabilities/>
-    <Agenda/>
+    <!--<Agenda/>-->
+    <div class="h-32"/>
+    <Booking/>
+    <div class="h-32"/>
     <CustomerTestimonials/>
     <div class="bg-gradient-to-b from-neutral to-white">
-        <div class="h-[16px] lg:h-[32px]"/>
+        <div class="h-8"/>
         <Team/>
     </div>
+    <div class="h-16"/>
     <QnA/>
+    <div class="h-16"/>
     <Footer/>
 </Layout>

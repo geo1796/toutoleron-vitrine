@@ -1,5 +1,6 @@
 ---
 import Logo from "../assets/logos/TOUTOLERON_Avatar.svg";
+import ArrowMenu from "../assets/svg/arrow-menu.svg";
 
 interface Props {
     title?: string;
@@ -44,51 +45,27 @@ const totalDays = 30; // mock agenda like the screenshot
                     <Logo class="h-24 w-24 opacity-90"/>
                     <div class="text-center">
                         <p class="text-xl md:text-2xl font-semibold">Toutoleron</p>
-                        <!--<div class="mt-2 flex items-center gap-2 justify-center text-accent-content/90">-->
-                        <!--  <span class="opacity-70">‹</span>-->
-                        <!--  <span class="font-semibold lowercase">{monthLabel}</span>-->
-                        <!--  <span class="opacity-70">›</span>-->
-                        <!--</div>-->
                     </div>
                 </div>
 
 
                 <div class="flex justify-center mt-8">
-                    <calendar-date class="cally bg-accent"
-                                   locale="fr-FR">
-                        <svg aria-label="Previous" class="fill-primary size-6" slot="previous"
-                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
-                        </svg>
-                        <svg aria-label="Next" class="fill-primary size-6" slot="next"
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 24 24">
-                            <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                        </svg>
-                        <calendar-month></calendar-month>
+                    <calendar-date class="cally bg-accent" locale="fr-FR">
+                        <img class="h-3 w-3 rotate-90"
+                             alt="Voir les solutions"
+                             src={ArrowMenu.src}
+                             slot="previous"
+                        />
+                        <img class="h-3 w-3 -rotate-90"
+                             alt="Voir les solutions"
+                             src={ArrowMenu.src}
+                             slot="next"
+                        />
+                        <div class="text-xl">
+                            <calendar-month></calendar-month>
+                        </div>
                     </calendar-date>
                 </div>
-
-                <!-- Weekday headers -->
-                <!--<div class="mt-8 grid grid-cols-7 text-xs md:text-sm uppercase tracking-wide text-accent-content/70">-->
-                <!--  {daysOfWeek.map((d) => (-->
-                <!--    <div class="text-center py-2">{d}</div>-->
-                <!--  ))}-->
-                <!--</div>-->
-
-                <!-- Days grid (static layout like the mockup: 1 starts on Monday) -->
-                <!--<div class="mt-2 grid grid-cols-7 gap-y-3">-->
-                <!--  {Array.from({ length: totalDays }, (_, i) => i + 1).map((day) => (-->
-                <!--    <div class="flex items-center justify-center py-2">-->
-                <!--      {day === selectedDay ? (-->
-                <!--        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-base-100 text-accent font-semibold shadow-sm">{day}</span>-->
-                <!--      ) : (-->
-                <!--        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full text-accent-content/60">{day}</span>-->
-                <!--      )}-->
-                <!--    </div>-->
-                <!--  ))}-->
-                <!--  &lt;!&ndash; Last empty cells for alignment (if needed) &ndash;&gt;-->
-                <!--</div>-->
             </div>
 
             <!-- Right: time selection -->

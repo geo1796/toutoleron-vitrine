@@ -6,22 +6,10 @@ import CheckSVG from "../assets/svg/check.svg";
 import ShapeFile from "../assets/svg/shape-file-01.svg";
 import Illustration from "../assets/illustrations/TOUTOLERON_illu_location_installation_maintenance.png";
 
-interface Props {
-    title?: string,
-    description?: string,
-    bannerQuote?: string,
-    bannerSubtitle?: string,
-    footerTitle?: string,
-    footerDescription?: string,
-}
 
-const {
-    footerTitle = "Louez et simplifiez la gestion\n" +
-        "de votre équipement informatique.",
-    footerDescription = "Un matériel toujours performant, livré, installé et renouvelé sans\n" +
-        "contrainte. Tout est inclus dans un abonnement sur-mesure, sans apport\n" +
-        "ni dépôt de garantie.",
-} = Astro.props as Props;
+const footerDescription = "Un matériel toujours performant, livré, installé et renouvelé sans " +
+    "contrainte. Tout est inclus dans un abonnement sur-mesure, sans apport " +
+    "ni dépôt de garantie.";
 ---
 
 <!-- Solutions section -->
@@ -29,8 +17,8 @@ const {
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <!-- Solutions cards title -->
         <div class="mt-14 lg:mt-16 text-center">
-            <h3 class="text-3xl sm:text-4xl font-semibold">
-                Vos besoins, <span class="text-accent">un écosystème de solutions.</span>
+            <h3 class="text-3xl sm:text-6xl">
+                Vos besoins, <span class="font-semibold">un écosystème de solutions.</span>
             </h3>
         </div>
 
@@ -80,8 +68,10 @@ const {
                 <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
                     LOCATION & MAINTENANCE
                 </div>
-                <h3 class="text-3xl sm:text-4xl font-semibold leading-tight whitespace-pre-line">{footerTitle}</h3>
-                <p class="mt-4 text-base-content/70 whitespace-pre-line">{footerDescription}</p>
+                <h3 class="text-3xl sm:text-4xl leading-tight whitespace-pre-line">
+                    Louez et simplifiez la gestion <span class="font-semibold">de votre équipement informatique.</span>
+                </h3>
+                <p class="mt-4 whitespace-pre-line">{footerDescription}</p>
 
                 <ul class="mt-6 space-y-3">
                     <li class="flex items-start gap-3">

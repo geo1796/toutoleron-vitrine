@@ -5,6 +5,7 @@
     name: "light";
     default: true;
     --color-primary: oklch(0.7895 0.1195 101.75);
+    --color-primary-content: oklch(0.2531 0.0458 221.92);
     --color-secondary: oklch(0.8885 0.0258 268.83);
     --color-accent: oklch(0.2531 0.0458 221.92);
     --color-accent-content: white;
@@ -47,8 +48,32 @@
 
 @font-face {
     font-family: "Recoleta Alt";
+    src: url("./fonts/Recoleta Alt/RecoletaAlt-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Recoleta Alt";
+    src: url("./fonts/Recoleta Alt/RecoletaAlt-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Recoleta Alt";
     src: url("./fonts/Recoleta Alt/RecoletaAlt-SemiBold.ttf") format("truetype");
     font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Recoleta Alt";
+    src: url("./fonts/Recoleta Alt/RecoletaAlt-Bold.ttf") format("truetype");
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
