@@ -1,23 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from "../components/Header.astro";
-import Solutions from "../components/Solutions.astro";
-import Weda from "../components/Weda.astro";
-import Security from "../components/Security.astro";
-import Branding from "../components/Branding.astro";
-import Capabilities from "../components/Capabilities.astro";
+import HeaderIndex from "../components/index/HeaderIndex.astro";
+import Solutions from "../components/index/Solutions.astro";
+import Weda from "../components/index/Weda.astro";
+import Security from "../components/index/Security.astro";
+import BrandingIndex from "../components/index/BrandingIndex.astro";
+import Capabilities from "../components/index/Capabilities.astro";
 import CustomerTestimonials from "../components/CustomerTestimonials.astro";
-import Team from "../components/Team.astro";
-import QnA from "../components/Q&A.astro";
-import Footer from "../components/Footer.astro";
-import Booking from "../components/Booking.astro";
+import Team from "../components/index/Team.astro";
+import QnAIndex from "../components/index/Q&AIndex.astro";
+import Booking from "../components/index/Booking.astro";
 ---
 
 <Layout>
-    <Header/>
+    <HeaderIndex/>
     <div class="h-8"/>
     <div class="bg-gradient-to-b from-white to-neutral">
-        <Branding/>
+        <BrandingIndex/>
         <Solutions/>
     </div>
     <div class="h-8"/>
@@ -35,7 +34,6 @@ import Booking from "../components/Booking.astro";
         <Team/>
     </div>
     <div class="h-16"/>
-    <QnA/>
+    <QnAIndex/>
     <div class="h-16"/>
-    <Footer/>
 </Layout>

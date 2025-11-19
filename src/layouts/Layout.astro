@@ -1,5 +1,6 @@
 ---
 import "../assets/app.css";
+import Footer from "../components/layout/Footer.astro";
 
 interface Props {
     title?: string;
@@ -29,7 +30,7 @@ const {
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 </head>
-<body class="justify-self-center min-h-dvh max-w-7xl bg-base-100 text-base-content">
+<body class="justify-self-center min-h-dvh max-w-7xl bg-white text-base-content">
 <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
     Aller au contenu
 </a>
@@ -37,5 +38,6 @@ const {
 <main id="contenu">
     <slot/>
 </main>
+<Footer/>
 </body>
 </html>

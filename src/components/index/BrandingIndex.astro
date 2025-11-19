@@ -1,10 +1,10 @@
 ---
-import Getty1 from "../assets/photos/gettyimages-108112936-2048x2048.jpg";
-import Getty2 from "../assets/photos/gettyimages-596435227-2048x2048.jpg";
-import Getty3 from "../assets/photos/gettyimages-602981371-2048x2048.jpg";
-import Getty4 from "../assets/photos/gettyimages-1405683451-2048x2048.jpg";
-import Logo from "../assets/logos/TOUTOLERON_Embleme_blanc.svg";
-import Marquee from "./Marquee.astro";
+import Getty1 from "../../assets/photos/gettyimages-108112936-2048x2048.jpg";
+import Getty2 from "../../assets/photos/gettyimages-596435227-2048x2048.jpg";
+import Getty3 from "../../assets/photos/gettyimages-602981371-2048x2048.jpg";
+import Getty4 from "../../assets/photos/gettyimages-1405683451-2048x2048.jpg";
+import Logo from "../../assets/logos/TOUTOLERON_Embleme_blanc.svg";
+import Marquee from "../Marquee.astro";
 
 interface Props {
     description?: string,
@@ -29,7 +29,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<!-- Branding section -->
+<!-- BrandingIndex section -->
 <section class="hidden sm:block">
     <div class="px-6">
         <!-- Title & intro -->
@@ -44,10 +44,10 @@ const {
         <div class="overflow-hidden my-4 items-center rounded-2xl bg-primary bg-center bg-cover bg-no-repeat">
 
             <!-- Quote banner with collage -->
-            <div class="grid grid-cols-2 gap-6 lg:gap-10 items-stretch h-[600px]">
+            <div class="grid grid-cols-2 gap-6 lg:gap-10 items-stretch h-150">
 
                 <!-- Left card with quote -->
-                <div class="relative rounded-2xl p-6 h-[600px]">
+                <div class="relative rounded-2xl p-6 h-150">
 
                     <img src={Logo.src} alt="Logo" class="w-full h-auto opacity-25"/>
 

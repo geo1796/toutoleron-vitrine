@@ -1,13 +1,13 @@
 ---
-import BackgroundPhotoUrl from "../assets/photos/Header.jpg?url";
-import BackgroundPhoto from "../assets/photos/Header.jpg";
-import EmojiStar from "../assets/emojis/emoji-star.png";
-import EmojiBrain from "../assets/emojis/emoji-brain.png";
-import EmojiPeople from "../assets/emojis/emoji-people.png";
-import NavBar from "./NavBar.astro";
+import BackgroundPhotoUrl from "../../assets/photos/Header.jpg?url";
+import BackgroundPhoto from "../../assets/photos/Header.jpg";
+import EmojiStar from "../../assets/emojis/emoji-star.png";
+import EmojiBrain from "../../assets/emojis/emoji-brain.png";
+import EmojiPeople from "../../assets/emojis/emoji-people.png";
+import NavBar from "../NavBar.astro";
 ---
 
-<section class="relative overflow-hidden">
+<section id="header-index" class="relative overflow-hidden">
 
     <div class="hidden xl:block bg-center bg-cover bg-no-repeat"
          style={`background-image: url(${BackgroundPhotoUrl})`}>
@@ -47,7 +47,8 @@ import NavBar from "./NavBar.astro";
                         Simplifier <span class="font-bold">l'écosystème numérique des soignants.</span>
                     </h1>
                     <p class="mt-6 text-lg whitespace-pre-line max-w-prose">
-                        Expert en informatique de santé, Toutoléron soutient les soignants avec des solutions fiables et efficaces pour gagner en sérénité, libérer du temps patient et améliorer le quotidien médical.
+                        Expert en informatique de santé, Toutoléron soutient les soignants avec des solutions fiables et
+                        efficaces pour gagner en sérénité, libérer du temps patient et améliorer le quotidien médical.
                     </p>
 
                     <!-- Actions -->

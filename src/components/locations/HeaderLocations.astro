@@ -1,0 +1,72 @@
+---
+import NavBar from "../NavBar.astro";
+import CheckIcon from "../../assets/svg/check.svg";
+---
+
+<section id="header-locations" class="relative">
+    <NavBar/>
+
+    <div class="px-6 lg:px-8 py-10 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <!-- Left: text content -->
+        <div>
+            <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
+                LOCATION & MAINTENANCE
+            </div>
+
+            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+                Location de matériel informatique pour
+                <span class="block font-semibold">libérer le quotidien des soignants.</span>
+            </h1>
+
+            <p class="mt-6 text-xl max-w-2xl">
+                Toutoléron offre la solution clé en main idéale pour aider les soignants à garantir le niveau
+                opérationnel optimal de leur activité dans la sérénité, sans contrainte technique ni perte de temps
+                informatique.
+            </p>
+
+            <div class="mt-8">
+                <a href='https://outlook.office.com/book/test@toutoleron.com/?ismsaljsauthenabled'
+                   target="_blank"
+                   class="btn btn-primary rounded-full px-6 text-primary-content font-medium">
+                    Prendre RDV
+                </a>
+            </div>
+        </div>
+
+        <!-- Right: key benefits -->
+        <div class="grid gap-6">
+            <div class="card bg-base-100">
+                <div class="card-body flex-row gap-4 items-start">
+                    <img src={CheckIcon.src} alt="" class="h-6 w-6 shrink-0"/>
+                    <div>
+                        <h3 class="text-xl font-semibold">Louez tout-en-un</h3>
+                        <p class="text-base-content/90">Livraison, installation, renouvellement et maintenance
+                            inclus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100">
+                <div class="card-body flex-row gap-4 items-start">
+                    <img src={CheckIcon.src} alt="" class="h-6 w-6 shrink-0"/>
+                    <div>
+                        <h3 class="text-xl font-semibold">Pensée pour tout simplifier</h3>
+                        <p class="text-base-content/90">Package informatique fiable, ajusté à votre pratique et à vos
+                            besoins réels.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100">
+                <div class="card-body flex-row gap-4 items-start">
+                    <img src={CheckIcon.src} alt="" class="h-6 w-6 shrink-0"/>
+                    <div>
+                        <h3 class="text-xl font-semibold">Toujours opérationnel</h3>
+                        <p class="text-base-content/90">Suivi proactif à distance, prêt express sous 48h en cas de
+                            défaut et réinstallation WEDA incluse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

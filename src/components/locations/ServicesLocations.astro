@@ -1,0 +1,67 @@
+---
+import Photo from "../../assets/photos/gettyimages-596435227-2048x2048.jpg";
+---
+
+<section id="services-locations" class="py-10 lg:py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Top: Title + Intro with image -->
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight">
+          Tout ce dont vous avez
+          <span class="block">besoin, <span class="font-semibold">sans superflu.</span></span>
+        </h2>
+        <p class="mt-6 text-base-content/80 max-w-2xl">
+          Chez Toutoléron, pas de catalogue, pas d’hésitation et pas
+          de perte de temps. Nous avons déjà sélectionné du matériel
+          informatique moyen-haut de gamme éprouvé et certifié, en
+          partenariat avec les meilleures marques professionnelles.
+        </p>
+      </div>
+
+      <div class="relative order-first lg:order-none">
+        <div class="absolute -top-6 -right-6 bg-primary/40 rounded-3xl w-56 h-40 sm:w-72 sm:h-52 lg:w-96 lg:h-64"></div>
+        <img src={Photo.src} alt="Accueil au secrétariat d'un cabinet médical" class="relative rounded-xl shadow-sm w-full h-60 sm:h-72 lg:h-80 object-cover" />
+      </div>
+    </div>
+
+    <!-- Included -->
+    <div class="mt-10 lg:mt-14">
+      <div class="text-primary font-semibold tracking-wide uppercase text-sm">Ce qui est inclus</div>
+
+      <div class="mt-4 grid md:grid-cols-2 gap-6">
+        <!-- Matériel -->
+        <div class="card border border-base-300 rounded-2xl">
+          <div class="card-body">
+            <h3 class="text-xl font-semibold">Matériel</h3>
+            <ul class="mt-3 list-disc pl-5 space-y-2">
+              <li>Unités centrales pro (dont tout-en-un TERRA)</li>
+              <li>Ordinateurs portables (ASUS)</li>
+              <li>Écrans cabinet</li>
+              <li>Clavier / souris (Logitech)</li>
+              <li>Imprimante (HP)</li>
+              <li>Scanner (FUJITSU)</li>
+              <li>Lecteur de carte CPS &amp; Vitale</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="card border border-base-300 rounded-2xl">
+          <div class="card-body">
+            <h3 class="text-xl font-semibold">Services</h3>
+            <ul class="mt-3 list-disc pl-5 space-y-2">
+              <li>Livraison, installation, renouvellement, maintenance</li>
+              <li>Gestion de l’antivirus et prise en charge des infestations</li>
+              <li>Surveillance des composants à distance et nettoyage système régulier</li>
+              <li>Assistance téléphonique à l’usage</li>
+              <li>Prêt de matériel sous 48 h en cas de défaut</li>
+              <li>Réinstallation WEDA lors d’un changement de poste</li>
+              <li>Conseil &amp; coordination avec les intervenants extérieurs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

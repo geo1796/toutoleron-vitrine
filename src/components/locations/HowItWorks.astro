@@ -1,0 +1,61 @@
+---
+import Logo from "../../assets/logos/TOUTOLERON_Embleme_blanc.svg";
+
+interface Step {
+    number: string;
+    title: string;
+    text: string;
+}
+
+const steps: Step[] = [
+    {
+        number: "01.",
+        title: "Diagnostic rapide",
+        text:
+            "Prenez un simple rendez-vous téléphonique ou en visio et laissez-vous guider. Après quelques questions sur votre pratique, votre usage et votre équipement actuel, nous saurons vous conseiller.",
+    },
+    {
+        number: "02.",
+        title: "Mise en place",
+        text:
+            "Vous n’avez rien à faire d’autre que de nous ouvrir la porte de votre cabinet. Le matériel est livré, installé, configuré et prêt à soutenir votre pratique médicale. Le remplacement en cas de panne et le renouvellement sont inclus dans l’abonnement.",
+    },
+    {
+        number: "03.",
+        title: "Suivi continu",
+        text:
+            "Restez serein au quotidien, surtout dans les moments où vous en avez le plus besoin. Notre équipe veille à la performance de votre matériel à l’aide d’un suivi à distance et répond à vos questions 5j/7 de 6h à 20h.",
+    },
+];
+---
+
+<section id="how-it-works" class="relative flex justify-end items-center overflow-hidden bg-base-200 h-200">
+
+    <img src={Logo.src} alt="Logo" class="h-200 w-auto opacity-30"/>
+
+    <div class="absolute">
+        <div class="mx-auto max-w-7xl px-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight pb-8">
+                Comment ça <span class="font-semibold">marche</span> ?
+            </h2>
+
+            <div class="mt-8 space-y-6 lg:space-y-8 px-16">
+                {steps.map((s) => (
+                        <div class="card bg-base-100 rounded-2xl">
+                            <div class="card-body">
+                                <div class="flex gap-6 items-center">
+                                    <div class="text-primary text-3xl sm:text-4xl font-semibold leading-none select-none">
+                                        {s.number}
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold">{s.title}</h3>
+                                        <p class="mt-2 text-base-content/80">{s.text}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

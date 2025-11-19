@@ -1,0 +1,71 @@
+---
+import Img1 from "../../assets/photos/gettyimages-1447117968-2048x2048.jpg";
+import Img2 from "../../assets/photos/gettyimages-602981371-2048x2048.jpg";
+import Img3 from "../../assets/photos/gettyimages-1473559434-2048x2048.jpg";
+
+interface WhyItem {
+  img: ImageMetadata;
+  title: string;
+  desc: string;
+}
+
+const items: WhyItem[] = [
+  {
+    img: Img1,
+    title: "Se libérer de la contrainte informatique :",
+    desc:
+      "Une solution ajustée à la réalité du soin. Toutoléron, un partenaire e‑santé qui soulage du stress informatique.",
+  },
+  {
+    img: Img2,
+    title: "Sécuriser sa pratique médicale :",
+    desc:
+      "Des résultats concrets au quotidien avec moins de pannes, moins de charge mentale et plus de temps patient. Votre environnement informatique reste fiable et vos données protégées.",
+  },
+  {
+    img: Img3,
+    title: "Optimiser son cabinet pour mieux soigner :",
+    desc:
+      "Avec un écosystème numérique performant et toujours à jour, votre pratique médicale gagne en sérénité, fluidité et efficacité pour garantir le meilleur soin.",
+  },
+];
+---
+
+<section id="why-locations" class="py-10 lg:py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+    <!-- Left column: heading + CTA -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight">
+        Pourquoi louer
+        <span class="block"><span class="font-semibold">avec Toutoléron ?</span></span>
+      </h2>
+
+      <div class="mt-8">
+        <a
+          target="_blank"
+          href="https://outlook.office.com/book/test@toutoleron.com/?ismsaljsauthenabled"
+          class="btn btn-accent rounded-full px-6 text-accent-content font-medium"
+        >
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+
+    <!-- Right column: 3 media rows -->
+    <div class="space-y-6">
+      {items.map((it) => (
+        <div class="card bg-base-100 border border-base-300 rounded-2xl">
+          <div class="card-body">
+            <div class="grid grid-cols-1 sm:grid-cols-[220px_1fr] items-start gap-5">
+              <img src={it.img.src} alt="Illustration" class="w-full h-48 sm:h-40 object-cover rounded-xl" />
+              <div>
+                <h3 class="text-xl font-semibold">{it.title}</h3>
+                <p class="mt-2 text-base-content/80">{it.desc}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderLocations from "../components/locations/HeaderLocations.astro";
+import BrandingLocations from "../components/locations/BrandingLocations.astro";
+import ServicesLocations from "../components/locations/ServicesLocations.astro";
+import WhyLocations from "../components/locations/WhyLocations.astro";
+import MasteredEfficiency from "../components/locations/MasteredEfficiency.astro";
+import HowItWorks from "../components/locations/HowItWorks.astro";
+import CustomerTestimonials from "../components/CustomerTestimonials.astro";
+import QnALocations from "../components/locations/Q&ALocations.astro";
+---
+
+<Layout>
+    <div class="bg-gradient-to-b from-neutral to-white">
+        <HeaderLocations/>
+        <BrandingLocations/>
+    </div>
+    <MasteredEfficiency/>
+    <ServicesLocations/>
+    <HowItWorks/>
+    <WhyLocations/>
+    <CustomerTestimonials/>
+    <QnALocations/>
+</Layout>
