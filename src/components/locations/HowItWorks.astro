@@ -1,5 +1,6 @@
 ---
 import Logo from "../../assets/logos/TOUTOLERON_Embleme_blanc.svg";
+import Arrow2 from "../../assets/svg/arrow-02.svg";
 
 interface Step {
     number: string;
@@ -29,33 +30,63 @@ const steps: Step[] = [
 ];
 ---
 
-<section id="how-it-works" class="relative flex justify-end items-center overflow-hidden bg-base-200 h-200">
+<section id="how-it-works"
+         class="relative flex justify-center md:justify-end items-center overflow-hidden bg-base-200 h-200">
 
     <img src={Logo.src} alt="Logo" class="h-200 w-auto opacity-30"/>
 
-    <div class="absolute">
-        <div class="mx-auto max-w-7xl px-12">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight pb-8">
-                Comment ça <span class="font-semibold">marche</span> ?
-            </h2>
+    <div class="absolute flex flex-col items-center p-6 lg:p-8">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-10">
+            Comment ça <span class="font-semibold">marche</span> ?
+        </h2>
 
-            <div class="mt-8 space-y-6 lg:space-y-8 px-16">
-                {steps.map((s) => (
+        <div class="hidden md:block mt-8 space-y-6 lg:space-y-8 px-8 lg:px-16">
+            {steps.map((s) => (
+                    <div class="card bg-base-100 rounded-2xl">
+                        <div class="card-body">
+                            <div class="flex gap-6 items-center">
+                                <div class="text-primary text-3xl sm:text-4xl font-semibold leading-none select-none">
+                                    {s.number}
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold">{s.title}</h3>
+                                    <p class="mt-2 text-base-content/80">{s.text}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            ))}
+        </div>
+
+        <div class="carousel gap-12 max-w-80 overflow-hidden md:hidden">
+            {steps.map((step, index) => (
+                    <div id={`comment-ca-marche-${index}`} class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
+                        <div class="flex items-center justify-center gap-4">
+                            {index > 0 &&
+                                    <a href={`#comment-ca-marche-${index - 1}`}>
+                                        <img class="h-16 w-16" src={Arrow2.src} alt="Précédent"/>
+                                    </a>}
+                            {index < steps.length - 1 &&
+                                    <a href={`#comment-ca-marche-${index + 1}`}>
+                                        <img class="h-16 w-16 rotate-y-180" src={Arrow2.src} alt="Suivant"/>
+                                    </a>}
+                        </div>
                         <div class="card bg-base-100 rounded-2xl">
                             <div class="card-body">
-                                <div class="flex gap-6 items-center">
+                                <div class="flex flex-col gap-6 items-center">
                                     <div class="text-primary text-3xl sm:text-4xl font-semibold leading-none select-none">
-                                        {s.number}
+                                        {step.number}
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-semibold">{s.title}</h3>
-                                        <p class="mt-2 text-base-content/80">{s.text}</p>
+                                        <h3 class="text-xl font-semibold">{step.title}</h3>
+                                        <p class="mt-2 text-base-content/80">{step.text}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                ))}
-            </div>
+                    </div>
+            ))}
         </div>
+
     </div>
 </section>

@@ -51,7 +51,7 @@ const cardItems: CardItem[] = [
     <img src={Logo.src} alt="Logo" class="h-200 w-auto opacity-25"/>
 
     <div class="absolute flex flex-col items-center p-6 lg:p-8">
-        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center mb-10">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-10">
             Marre des journées à gérer les pannes ? <br/>
             <span class="font-semibold">Place à l’efficacité maîtrisée.</span>
         </h2>
@@ -84,14 +84,14 @@ const cardItems: CardItem[] = [
 
         <div class="carousel gap-12 max-w-80 overflow-hidden lg:hidden">
             {cardItems.map((cardItem, index) => (
-                    <div id={`efficiency${index}`} class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
+                    <div id={`efficacite-maitrise-${index}`} class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
                         <div class="flex items-center justify-center gap-4">
                             {index > 0 &&
-                                    <a href={`#efficiency${index - 1}`}>
+                                    <a href={`#efficacite-maitrise-${index - 1}`}>
                                         <img class="h-16 w-16" src={Arrow2.src} alt="Précédent"/>
                                     </a>}
                             {index < cardItems.length - 1 &&
-                                    <a href={`#efficiency${index + 1}`}>
+                                    <a href={`#efficacite-maitrise-${index + 1}`}>
                                         <img class="h-16 w-16 rotate-y-180" src={Arrow2.src} alt="Suivant"/>
                                     </a>}
                         </div>
