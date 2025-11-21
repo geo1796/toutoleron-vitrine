@@ -1,13 +1,78 @@
 ---
-import ShapeFileSVG from "../../assets/svg/shape-file-06.svg";
+import ShapeFileSVG from "../../assets/svg/shape-file-06-bis.svg";
+import Hero from "../../assets/photos/gettyimages-1363068310-2048x2048.jpg";
+import CheckIcon from "../../assets/svg/check.svg";
+
+const bullets = [
+    "Sécurité du poste : antivirus géré, infections traitées.",
+    "Suivi à distance et entretien logiciel régulier.",
+    "Assistance téléphonique réactive (du lundi au vendredi, 6h–20h).",
+    "Matériel de prêt sous 48h en cas de panne.",
+    "Réinstallation WEDA et coordination avec vos prestataires.",
+];
 ---
 
-<section id="maintenance">
+<section id="maintenance" class="hidden sm:block">
     <div class="relative">
-        <img src={ShapeFileSVG.src} alt="Maintenance" class="w-full h-auto"/>
-        <div class="absolute inset-0 flex w-full h-full items-center justify-evenly">
-            <p>Hello</p>
-            <p>World</p>
+
+        <img src={ShapeFileSVG.src} alt="" class="w-full h-auto"/>
+
+        <div class="absolute inset-0 grid lg:grid-cols-5 gap-16 items-center mx-2 lg:mx-16">
+
+            <div class="hidden lg:block lg:col-span-2">
+                <img class="rounded-2xl" src={Hero.src} alt=""/>
+            </div>
+
+            <div class="lg:col-span-3 flex lg:flex-col gap-8 justify-center items-center lg:items-start h-full">
+
+                <div class="flex flex-col gap-4 h-full lg:h-min justify-center mt-4">
+                    <h2 class="text-xl md:text-3xl lg:text-4xl">
+                        <span class="font-semibold">Déjà équipé ?</span>
+                        <br/>On veille sur votre matériel.
+                    </h2>
+
+                    <p class="text-lg lg:text-xl">
+                        Même sans location, votre poste reste performant et sécurisé.
+                        <br/>Un service complet, fiable, pensé pour les professionnels déjà équipés.
+                    </p>
+                </div>
+
+                <ul class="mt-6 space-y-1 lg:space-y-3">
+                    {bullets.map(
+                        bullet =>
+                                <li class="flex items-start gap-3">
+                                    <img src={CheckIcon.src} alt="" class="h-5 w-5 mt-0.5"/>
+                                    <p class="text-md md:text-lg">{bullet}</p>
+                                </li>
+                    )}
+                </ul>
+            </div>
+
         </div>
+
+    </div>
+</section>
+
+<section id="maintenance-mobile" class="sm:hidden bg-info">
+    <div class="flex flex-col gap-4 items-center justify-center p-4">
+        <h2 class="text-xl">
+            <span class="font-semibold">Déjà équipé ?</span>
+            <br/>On veille sur votre matériel.
+        </h2>
+
+        <p class="text-md">
+            Même sans location, votre poste reste performant et sécurisé.
+            <br/>Un service complet, fiable, pensé pour les professionnels déjà équipés.
+        </p>
+
+        <ul class="space-y-1">
+            {bullets.map(
+                bullet =>
+                        <li class="flex items-start gap-3">
+                            <img src={CheckIcon.src} alt="" class="h-5 w-5 mt-0.5"/>
+                            <p class="text-md md:text-lg">{bullet}</p>
+                        </li>
+            )}
+        </ul>
     </div>
 </section>

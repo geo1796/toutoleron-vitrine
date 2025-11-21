@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 623.62 361.65">
+    <defs>
+        <style>
+            .cls-1 { fill: #d3daec; }
+            .cls-2 {
+            fill: #0f172a; /* couleur du texte */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            }
+        </style>
+    </defs>
+
+    <path class="cls-1"
+          d="M616.53,28.11c3.91,0,7.09,3.17,7.09,7.09v319.38c0,3.91-3.17,7.09-7.09,7.09H7.09c-3.91,0-7.09-3.17-7.09-7.09V7.09C0,3.17,3.17,0,7.09,0h166.82c3.91,0,7.09,3.17,7.09,7.09v13.93c0,3.91,3.17,7.09,7.09,7.09h428.46Z"/>
+
+    <!-- Texte en haut à gauche -->
+    <text class="cls-2"
+          x="35"
+          y="20"
+          text-anchor="start">
+        MAINTENANCE
+    </text>
+</svg>

@@ -30,14 +30,14 @@ const {
 ---
 
 <section id="solutions-weda">
-    <div class="md:p-8 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="md:p-8 grid lg:grid-cols-5 gap-10 items-center">
         <!-- Left content -->
-        <div class="p-8">
+        <div class="p-8 lg:col-span-3">
             <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
                 {badge}
             </div>
 
-            <h2 class="text-4xl sm:text-6xl leading-tight">
+            <h2 class="text-4xl leading-tight">
                 {titleLine1}<br/>
                 <span class="font-semibold">{titleLine2}</span>
             </h2>
@@ -57,12 +57,13 @@ const {
 
             <div class="mt-8 flex flex-wrap gap-4">
                 <a class="btn btn-accent text-accent-content rounded-full px-6" href="#weda-details">{ctaPrimary}</a>
-                <a class="btn btn-primary text-primary-content rounded-full px-6" href="#weda-knowledge-base">{ctaSecondary}</a>
+                <a class="btn btn-primary text-primary-content rounded-full px-6"
+                   href="#weda-knowledge-base">{ctaSecondary}</a>
             </div>
         </div>
 
         <!-- Right illustration -->
-        <div class="hidden lg:block relative">
+        <div class="hidden lg:block relative lg:col-span-2">
             <ShapeFileWeda class="w-full h-auto"/>
             <div class="absolute inset-0 -translate-x-10 translate-y-25">
                 <img
@@ -72,5 +73,7 @@ const {
                 />
             </div>
         </div>
+
+        <div class="hidden lg:block h-16"/>
     </div>
 </section>
