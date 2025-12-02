@@ -6,8 +6,8 @@
             .cls-2 {
             fill: #0f172a; /* couleur du texte */
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             }
         </style>
     </defs>
@@ -17,7 +17,7 @@
 
     <!-- Texte en haut à gauche -->
     <text class="cls-2"
-          x="35"
+          x="40"
           y="20"
           text-anchor="start">
         MAINTENANCE

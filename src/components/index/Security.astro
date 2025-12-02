@@ -28,11 +28,13 @@ const {
 <section id="security">
     <div class="bg-neutral">
 
+        <div class="h-16"/>
+
         <div class="p-4 sm:p-16 grid lg:grid-cols-5 gap-16 md:gap-32 items-center">
             <!-- Left illustration -->
             <div class="hidden lg:block relative lg:col-span-2">
                 <img src={ShapeFileSecurity.src} alt="" class="w-full h-auto"/>
-                <div class="absolute inset-20 bottom-5 left-10 -right-10">
+                <div class="absolute inset-20 bottom-10 left-10 -right-10">
                     <img
                             src={Illustration.src}
                             alt="Cybersécurité et conformité pour les soignants"
@@ -52,11 +54,11 @@ const {
                     activité, <span class="font-semibold">simplement.</span>
                 </h2>
 
-                <p class="mt-6 text-base sm:text-xl text-base-content/70">
+                <p class="mt-6 text-base sm:text-xl">
                     {description}
                 </p>
 
-                <ul class="mt-6 space-y-3">
+                <ul class="mt-6 text-base sm:text-lg space-y-3">
                     {bullets.map((item) => (
                             <li class="flex items-start gap-3">
                                 <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
@@ -66,9 +68,12 @@ const {
                 </ul>
 
                 <div class="mt-8">
-                    <a class="btn btn-primary text-primary-content rounded-full px-6" href="#security-details">{ctaPrimary}</a>
+                    <a class="btn btn-accent hover:bg-accent/80 text-accent-content text-xl rounded-full p-6 shadow-none border-0"
+                       href="#security-details">{ctaPrimary}</a>
                 </div>
             </div>
         </div>
+
+        <div class="h-16"/>
     </div>
 </section>

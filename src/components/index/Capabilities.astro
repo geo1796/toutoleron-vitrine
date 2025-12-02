@@ -44,7 +44,8 @@ const {
 ---
 
 <section id="capabilities">
-    <div class="bg-info mx-auto p-6 md:p-8">
+    <div class="bg-info mx-auto p-6 md:p-16">
+        <div class="h-16"/>
         <!-- Heading -->
         <div class="text-center max-w-4xl mx-auto">
             <h2 class="text-4xl font-normal leading-tight">
@@ -65,13 +66,14 @@ const {
                         <p class="mt-4 text-base-content">
                             {c.description}
                         </p>
-                        <div class="mt-8">
-                            <a href={c.href || "#"} class="link link-hover font-semibold">
-                                {c.linkLabel || "En savoir plus"} <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
+                        <!--<div class="mt-8">-->
+                        <!--    <a href={c.href || "#"} class="link link-hover font-semibold">-->
+                        <!--        {c.linkLabel || "En savoir plus"} <span aria-hidden="true">→</span>-->
+                        <!--    </a>-->
+                        <!--</div>-->
                     </div>
             ))}
         </div>
+        <div class="h-16"/>
     </div>
 </section>

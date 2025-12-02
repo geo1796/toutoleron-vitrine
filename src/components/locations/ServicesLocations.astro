@@ -4,25 +4,26 @@ import ShapeFileSVG from "../../assets/svg/shape-file-02.svg";
 ---
 
 <section id="services-locations">
-    <div class="px-6 lg:px-8">
+    <div class="px-8 lg:px-16">
         <!-- Top: Title + Intro with image -->
-        <div class="grid md:grid-cols-3 gap-8 lg:gap-12 items-start">
+        <div class="grid md:grid-cols-3 lg:gap-12">
             <div class="md:col-span-2">
                 <h2 class="text-3xl lg:text-5xl leading-tight">
                     Tout ce dont vous avez
                     <span class="block">besoin, <span class="font-semibold">sans superflu.</span></span>
                 </h2>
-                <p class="mt-12 pr-2 text-sm md:text-md lg:text-lg max-w-xl">
+                <p class="mt-12 pr-2 text-sm md:text-md lg:text-xl max-w-sm md:max-w-md lg:max-w-lg">
                     Chez Toutoléron, pas de catalogue, pas d’hésitation et pas
                     de perte de temps. Nous avons déjà sélectionné du matériel
                     informatique moyen-haut de gamme éprouvé et certifié, en
                     partenariat avec les meilleures marques professionnelles.
                 </p>
+                <div class="mt-10 text-primary font-semibold tracking-wide uppercase text-md">Ce qui est inclus</div>
             </div>
 
-            <div class="hidden md:block relative">
-                <img src={ShapeFileSVG.src} alt="Illustration" class="w-full h-auto"/>
-                <div class="absolute inset-0 lg:-inset-10 -translate-x-5 lg:-translate-x-15 translate-y-15 lg:translate-y-28">
+            <div class="hidden lg:block relative">
+                <img src={ShapeFileSVG.src} alt="Illustration" class="w-full h-auto -translate-y-15"/>
+                <div class="absolute -inset-10 -translate-x-15 translate-y-10">
                     <img src={Photo.src}
                          class="w-full h-auto object-cover rounded-2xl shadow-sm"
                          alt="Accueil au secrétariat d'un cabinet médical"
@@ -31,41 +32,36 @@ import ShapeFileSVG from "../../assets/svg/shape-file-02.svg";
             </div>
         </div>
 
-        <!-- Included -->
-        <div class="mt-10 lg:mt-14">
-            <div class="text-primary font-semibold tracking-wide uppercase text-md">Ce qui est inclus</div>
-
-            <div class="mt-4 grid md:grid-cols-2 gap-6">
-                <!-- Matériel -->
-                <div class="card border border-base-300 rounded-2xl">
-                    <div class="card-body">
-                        <h3 class="text-xl font-semibold">Matériel</h3>
-                        <ul class="mt-3 list-disc pl-5 space-y-2">
-                            <li>Unités centrales pro (dont tout-en-un TERRA)</li>
-                            <li>Ordinateurs portables (ASUS)</li>
-                            <li>Écrans cabinet</li>
-                            <li>Clavier / souris (Logitech)</li>
-                            <li>Imprimante (HP)</li>
-                            <li>Scanner (FUJITSU)</li>
-                            <li>Lecteur de carte CPS &amp; Vitale</li>
-                        </ul>
-                    </div>
+        <div class="mt-4 grid md:grid-cols-2 gap-6">
+            <!-- Matériel -->
+            <div class="card border border-primary rounded-2xl">
+                <div class="card-body">
+                    <h3 class="text-xl font-semibold">Matériel</h3>
+                    <ul class="mt-3 list-disc pl-5 space-y-2">
+                        <li>Unités centrales pro (dont tout-en-un TERRA)</li>
+                        <li>Ordinateurs portables (ASUS)</li>
+                        <li>Écrans cabinet</li>
+                        <li>Clavier / souris (Logitech)</li>
+                        <li>Imprimante (HP)</li>
+                        <li>Scanner (FUJITSU)</li>
+                        <li>Lecteur de carte CPS &amp; Vitale</li>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Services -->
-                <div class="card border border-base-300 rounded-2xl">
-                    <div class="card-body">
-                        <h3 class="text-xl font-semibold">Services</h3>
-                        <ul class="mt-3 list-disc pl-5 space-y-2">
-                            <li>Livraison, installation, renouvellement, maintenance</li>
-                            <li>Gestion de l’antivirus et prise en charge des infestations</li>
-                            <li>Surveillance des composants à distance et nettoyage système régulier</li>
-                            <li>Assistance téléphonique à l’usage</li>
-                            <li>Prêt de matériel sous 48 h en cas de défaut</li>
-                            <li>Réinstallation WEDA lors d’un changement de poste</li>
-                            <li>Conseil &amp; coordination avec les intervenants extérieurs</li>
-                        </ul>
-                    </div>
+            <!-- Services -->
+            <div class="card border border-primary rounded-2xl">
+                <div class="card-body">
+                    <h3 class="text-xl font-semibold">Services</h3>
+                    <ul class="mt-3 list-disc pl-5 space-y-2">
+                        <li>Livraison, installation, renouvellement, maintenance</li>
+                        <li>Gestion de l’antivirus et prise en charge des infestations</li>
+                        <li>Surveillance des composants à distance et nettoyage système régulier</li>
+                        <li>Assistance téléphonique à l’usage</li>
+                        <li>Prêt de matériel sous 48 h en cas de défaut</li>
+                        <li>Réinstallation WEDA lors d’un changement de poste</li>
+                        <li>Conseil &amp; coordination avec les intervenants extérieurs</li>
+                    </ul>
                 </div>
             </div>
         </div>

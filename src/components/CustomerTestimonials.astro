@@ -10,16 +10,6 @@ interface Props {
     quote?: string;
     ctaLabel?: string;
 }
-
-const {
-    heading = "Nos clients médecins\nen parlent le mieux.",
-    subheading = "Leur quotidien a changé.\nIls nous le disent, simplement.",
-    name = "Dr. Sarah Dubois",
-    role = "Médecin généraliste",
-    quote =
-        "Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !",
-    ctaLabel = "Lire le témoignage",
-} = Astro.props as Props;
 ---
 
 <section id="customer-testimonials" class="block bg-primary py-4">
@@ -30,13 +20,14 @@ const {
 
                 <img src={Logo.src} alt="Logo" class="w-auto h-60 lg:h-120 opacity-25"/>
 
-                <div class="absolute inset-0">
-                    <div class="h-full flex flex-col items-center justify-center">
-                        <h2 class="text-2xl lg:text-6xl leading-tight whitespace-pre-line">
+                <div class="absolute inset-0 md:pl-16">
+                    <div class="h-full flex flex-col justify-center items-center md:items-start">
+                        <h2 class="text-2xl lg:text-5xl leading-tight whitespace-pre-line">
                             Nos clients médecins <br/> <span class="font-semibold">en parlent le mieux.</span>
                         </h2>
                         <p class="mt-6 whitespace-pre-line">
-                            {subheading}
+                            Leur quotidien a changé.
+                            Ils nous le disent, simplement.
                         </p>
                     </div>
                 </div>

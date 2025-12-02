@@ -3,9 +3,9 @@ import Logo from "../assets/logos/TOUTOLERON_Logotype_blanc.svg";
 import ArrowMenu from "../assets/svg/arrow-menu.svg";
 ---
 
-<div class="p-2 md:px-16 lg:px-32">
+<div class="py-2 md:px-16">
     <div class="navbar flex-col gap-4 md:flex-row md:gap-0 bg-accent text-accent-content rounded-2xl min-h-14">
-        <div class="md:ps-6">
+        <div class="py-2 md:ps-6">
             <a href="/" class="flex items-center" aria-label="Accueil Toutoléron">
                 <img src={Logo.src} alt="Toutoléron" class="w-48"/>
             </a>
@@ -16,39 +16,37 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
 
                 <div class="dropdown">
                     <div tabindex="0" role="button"
-                         class="btn btn-link link-hover text-accent-content">
+                         class="btn btn-link link-hover text-accent-content text-lg">
                         Solutions
                         <img class="h-3 w-3" src={ArrowMenu.src} alt="Voir les solutions"/>
                     </div>
                     <ul class="menu text-accent dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                        <li><a>Cabinet médical</a></li>
-                        <li><a>Maisons de santé</a></li>
+                        <li><a href="/locations">Location & maintenance</a></li>
                     </ul>
                 </div>
 
                 <div class="dropdown">
                     <div tabindex="0" role="button"
-                         class="btn btn-link link-hover text-accent-content">
+                         class="btn btn-link link-hover text-accent-content text-lg">
                         Ressources
                         <img class="h-3 w-3" src={ArrowMenu.src} alt="Voir les ressources"/>
                     </div>
                     <ul class="menu text-accent dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                        <li><a>Guides</a></li>
-                        <li><a>Actualités</a></li>
+                        <li><a>Base de connaissances</a></li>
                     </ul>
                 </div>
 
-                <a class="hidden xs:block btn bg-primary text-primary-content prim border-0 rounded-full shadow-sm"
+                <a class="hidden xs:block btn btn-primary text-lgqA p-4 text-primary-content rounded-full shadow-none border-0"
                    target="_blank"
                    href='https://outlook.office.com/book/test@toutoleron.com/?ismsaljsauthenabled'>
-                    <span class="sm:px-4">Prendre RDV</span>
+                    Prendre RDV
                 </a>
             </div>
         </div>
         <a target="_blank"
            href='https://outlook.office.com/book/test@toutoleron.com/?ismsaljsauthenabled'
-           class="xs:hidden btn bg-primary text-primary-content prim border-0 rounded-full shadow-sm">
-            <span class="sm:px-4">Prendre RDV</span>
+           class="xs:hidden btn btn-primary text-lg p-4 text-primary-content rounded-full shadow-none border-0">
+            Prendre RDV
         </a>
     </div>
 </div>

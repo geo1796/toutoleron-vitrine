@@ -46,23 +46,24 @@ const cardItems: CardItem[] = [
 ];
 ---
 
-<section id="mastered-efficiency" class="relative flex justify-center lg:justify-start items-center bg-primary h-200 overflow-hidden">
+<section id="mastered-efficiency"
+         class="relative grid justify-items-center lg:justify-items-start items-center bg-primary h-200 overflow-hidden">
 
     <img src={Logo.src} alt="Logo" class="h-200 w-auto opacity-25"/>
 
-    <div class="absolute flex flex-col items-center p-6 lg:p-8">
+    <div class="absolute flex flex-col justify-self-center items-center p-6 lg:p-8">
         <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-10">
             Marre des journées à gérer les pannes ? <br/>
             <span class="font-semibold">Place à l’efficacité maîtrisée.</span>
         </h2>
 
         <!-- Cards -->
-        <div class="hidden lg:grid gap-8 grid-cols-3">
+        <div class="hidden lg:flex gap-8 px-8">
             {cardItems.map((c) => (
-                    <div class="card bg-base-300 shadow-sm">
+                    <div class="card bg-base-300 shadow-sm max-w-xs">
                         <div class="card-body">
                             <div class="flex items-center gap-3">
-                                <div class="h-10 w-10 rounded-full bg-base-200 flex items-center justify-center text-xl">
+                                <div class="h-10 w-10 rounded-full bg-white flex items-center justify-center text-xl">
                                     {c.emoji}
                                 </div>
                             </div>
@@ -84,7 +85,8 @@ const cardItems: CardItem[] = [
 
         <div class="carousel gap-12 max-w-80 overflow-hidden lg:hidden">
             {cardItems.map((cardItem, index) => (
-                    <div id={`efficacite-maitrise-${index}`} class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
+                    <div id={`efficacite-maitrise-${index}`}
+                         class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
                         <div class="flex items-center justify-center gap-4">
                             {index > 0 &&
                                     <a href={`#efficacite-maitrise-${index - 1}`}>
@@ -123,8 +125,8 @@ const cardItems: CardItem[] = [
         <div class="mt-8 flex justify-center">
             <a target="_blank"
                href='https://outlook.office.com/book/test@toutoleron.com/?ismsaljsauthenabled'
-               class="btn btn-accent rounded-full px-6 text-accent-content font-medium">
-                Prendre RDV
+               class="btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">
+                Je prends rendez-vous
             </a>
         </div>
     </div>
