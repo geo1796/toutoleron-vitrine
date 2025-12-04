@@ -1,7 +1,7 @@
 ---
 import ShapeFileSecurity from "../../assets/svg/shape-file-03.svg";
 import CheckSVG from "../../assets/svg/check.svg";
-import Illustration from "../../assets/illustrations/TOUTOLERON_illu_cybersecurite.png";
+import Hero from "../../assets/illustrations/TOUTOLERON_illu_cybersecurite.png";
 
 interface Props {
     badge?: string;
@@ -32,13 +32,13 @@ const {
 
         <div class="p-4 sm:p-16 grid lg:grid-cols-5 gap-16 md:gap-32 items-center">
             <!-- Left illustration -->
-            <div class="hidden lg:block relative lg:col-span-2">
+            <div id="security-collage"  class="hidden lg:block relative lg:col-span-2">
                 <img src={ShapeFileSecurity.src} alt="" class="w-full h-auto"/>
                 <div class="absolute inset-20 bottom-10 left-10 -right-10">
                     <img
-                            src={Illustration.src}
+                            src={Hero.src}
                             alt="Cybersécurité et conformité pour les soignants"
-                            class="w-full h-full block"
+                            class="w-full h-full block security-hero"
                     />
                 </div>
             </div>
@@ -69,7 +69,7 @@ const {
 
                 <div class="mt-8">
                     <a class="btn btn-accent hover:bg-accent/80 text-accent-content text-xl rounded-full p-6 shadow-none border-0"
-                       href="#security-details">{ctaPrimary}</a>
+                       href="/en-construction">{ctaPrimary}</a>
                 </div>
             </div>
         </div>
@@ -77,3 +77,48 @@ const {
         <div class="h-16"/>
     </div>
 </section>
+
+<script>
+    if (typeof window !== "undefined") {
+        const collage = document.getElementById("security-collage");
+
+        if (collage) {
+            const img = collage.querySelector(".security-hero");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // La section entre dans le viewport → joue l'anim
+                            img?.classList.add("is-visible");
+                        } else {
+                            // La section sort du viewport → reset à l'état initial
+                            img?.classList.remove("is-visible");
+                        }
+                    });
+                },
+                { threshold: 0.3 }
+            );
+
+            observer.observe(collage);
+        }
+    }
+</script>
+
+<style>
+    /* État initial : légèrement décalée vers la GAUCHE, un peu réduite, transparente */
+    .security-hero {
+        transform: translateX(-3rem) translateY(1rem) scale(0.9);
+        opacity: 0;
+
+        transition:
+                transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 1500ms ease-out;
+    }
+
+    /* État final : position normale (celle que tu as déjà actuellement) */
+    #security-collage .security-hero.is-visible {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+</style>

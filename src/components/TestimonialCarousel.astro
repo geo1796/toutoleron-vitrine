@@ -34,7 +34,7 @@ const testimonials: CustomerTestimonial[] = [
 ];
 ---
 
-<div class="carousel w-full h-full overflow-hidden">
+<div id="testimonial-carousel" class="carousel w-full h-full overflow-hidden">
     {
         testimonials.map((testimonial, index) => (
                 <div id={`temoignage-${index}`} class="carousel-item flex flex-col justify-center items-center w-full h-full">
@@ -54,3 +54,32 @@ const testimonials: CustomerTestimonial[] = [
         ))
     }
 </div>
+<script>
+    if (typeof window !== "undefined") {
+        const carousel = document.getElementById("testimonial-carousel");
+        if (carousel) {
+            const links = carousel.querySelectorAll('a[href^="#temoignage-"]');
+
+            links.forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault();
+
+                    const href = link.getAttribute("href");
+                    if (!href) return;
+
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (!target || !(target instanceof HTMLElement)) return;
+
+                    // Position horizontale de la slide par rapport au conteneur du carousel
+                    const targetLeft = target.offsetLeft - carousel.offsetLeft;
+
+                    carousel.scrollTo({
+                        left: targetLeft,
+                        behavior: "smooth",
+                    });
+                });
+            });
+        }
+    }
+</script>

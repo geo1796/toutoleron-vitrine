@@ -1,6 +1,6 @@
 ---
 import ShapeFileSVG from "../../assets/svg/shape-file-06.svg";
-import Illustration from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosysteme-numerique.png";
+import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosysteme-numerique.png";
 ---
 
 <section id="simplifier-ecosysteme-numerique" class="hidden md:block">
@@ -10,8 +10,12 @@ import Illustration from "../../assets/illustrations/TOUTOLERON_illu_simplifier_
 
         <div class="absolute inset-0 -top-20 grid grid-cols-5 gap-16 items-center">
 
-            <div class="hidden md:block md:col-span-2 pl-4">
-                <img src={Illustration.src} alt=""/>
+            <div id="simplify-ecosystem-hero-collage" class="hidden md:block md:col-span-2 pl-4 relative">
+                <img
+                    src={Hero.src}
+                    alt=""
+                    class="simplify-ecosystem-hero"
+                />
             </div>
 
             <div class="col-span-3 flex flex-col gap-4 lg:gap-8 justify-center items-start">
@@ -36,6 +40,47 @@ import Illustration from "../../assets/illustrations/TOUTOLERON_illu_simplifier_
             </div>
         </div>
     </div>
+    <script>
+      if (typeof window !== "undefined") {
+        const collage = document.getElementById("simplify-ecosystem-hero-collage");
+
+        if (collage) {
+          const img = collage.querySelector(".simplify-ecosystem-hero");
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  img?.classList.add("is-visible");
+                } else {
+                  img?.classList.remove("is-visible");
+                }
+              });
+            },
+            { threshold: 0.3 }
+          );
+
+          observer.observe(collage);
+        }
+      }
+    </script>
+    <style>
+      /* État initial : légèrement décalée vers la GAUCHE, réduite, transparente */
+      .simplify-ecosystem-hero {
+        transform: translateX(-3rem) translateY(0.75rem) scale(0.9);
+        opacity: 0;
+
+        transition:
+          transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 1500ms ease-out;
+      }
+
+      /* État final : position normale */
+      #simplify-ecosystem-hero-collage .simplify-ecosystem-hero.is-visible {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+      }
+    </style>
 </section>
 
 <section id="simplifier-ecosysteme-numerique-mobile" class="md:hidden">

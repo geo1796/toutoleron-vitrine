@@ -1,47 +1,120 @@
 ---
-import Team0 from '../../assets/photos/team/DANIEL.png'
-import Team1 from '../../assets/photos/team/Alexandre.jpeg'
-import Team2 from '../../assets/photos/team/ALEXIS.png'
-import Team3 from '../../assets/photos/team/ANATOLE.png'
-import Team4 from '../../assets/photos/team/CHARLOTTE.png'
-import Team5 from '../../assets/photos/team/FANNY.png'
-import Team6 from '../../assets/photos/team/FLAVIEN.png'
-import Team7 from '../../assets/photos/team/GEOFFREY.png'
-import Team8 from '../../assets/photos/team/KYLLIAN.png'
-import Team9 from '../../assets/photos/team/MANU.png'
-import Team10 from '../../assets/photos/team/MATTHIEU.png'
-import Team11 from '../../assets/photos/team/NICO.png'
-import Team12 from '../../assets/photos/team/NOE.png'
-import Team13 from '../../assets/photos/team/PAULINE.png'
-import Team14 from '../../assets/photos/team/ROMAIN.png'
-import Team15 from '../../assets/photos/team/SARAH_BERNARD.png'
-import Team16 from '../../assets/photos/team/SARAH_BOISSON.png'
-import Team17 from '../../assets/photos/team/WILL.png'
+import Daniel from '../../assets/photos/team/DANIEL.png'
+import Alexandre from '../../assets/photos/team/Alexandre.jpeg'
+import Alexis from '../../assets/photos/team/ALEXIS.png'
+import Anatole from '../../assets/photos/team/ANATOLE.png'
+import Charlotte from '../../assets/photos/team/CHARLOTTE.png'
+import Fanny from '../../assets/photos/team/FANNY.png'
+import Flavien from '../../assets/photos/team/FLAVIEN.png'
+import Geoffrey from '../../assets/photos/team/GEOFFREY.png'
+import Kyllian from '../../assets/photos/team/KYLLIAN.png'
+import Manu from '../../assets/photos/team/MANU.png'
+import Matthieu from '../../assets/photos/team/MATTHIEU.png'
+import Nico from '../../assets/photos/team/NICO.png'
+import Noe from '../../assets/photos/team/NOE.png'
+import Pauline from '../../assets/photos/team/PAULINE.png'
+import Romain from '../../assets/photos/team/ROMAIN.png'
+import SarahBernard from '../../assets/photos/team/SARAH_BERNARD.png'
+import SarahBoisson from '../../assets/photos/team/SARAH_BOISSON.png'
+import Will from '../../assets/photos/team/WILL.png'
 
-const teamPictures: ImageMetadata[] = [
-    Team0, Team1, Team2, Team3, Team4, Team5, Team6, Team7, Team8, Team9, Team10, Team11, Team12, Team13, Team14, Team15, Team16, Team17,
+interface TeamMember {
+    photo: ImageMetadata;
+    name: string;
+}
+
+const team: TeamMember[] = [
+    {photo: Daniel, name: 'Daniel'},
+    {photo: Alexandre, name: 'Alexandre'},
+    {photo: Alexis, name: 'Alexis'},
+    {photo: Anatole, name: 'Anatole'},
+    {photo: Charlotte, name: 'Charlotte'},
+    {photo: Fanny, name: 'Fanny'},
+    {photo: Flavien, name: 'Flavien'},
+    {photo: Geoffrey, name: 'Geoffrey'},
+    {photo: Kyllian, name: 'Kyllian'},
+    {photo: Manu, name: 'Emmanuel'},
+    {photo: Matthieu, name: 'Matthieu'},
+    {photo: Nico, name: 'Nicolas'},
+    {photo: Noe, name: 'Noé'},
+    {photo: SarahBoisson, name: 'Sarah'},
+    {photo: Pauline, name: 'Pauline'},
+    {photo: Romain, name: 'Romain'},
+    {photo: Will, name: 'Wilfried'},
+    {photo: SarahBernard, name: 'Sarah'},
 ];
 ---
 
 <section id="team">
     <div class="flex flex-col gap-5 items-center justify-center w-full py-8 px-2 text-center">
         <h2 class="text-3xl md:text-5xl">Toujours disponibles <span class="font-semibold">pour vous aider</span></h2>
+
         <p class="py-4 max-w-lg">
             Une équipe proche des soignants, qui comprend vos enjeux et vous accompagne à chaque étape
         </p>
-        <button class="p-6 btn btn-primary text-xl text-primary-content rounded-full shadow-none border-0">Rencontrez
-            notre équipe
-        </button>
 
-        <div class="carousel gap-2 mt-16">
-            {
-                teamPictures.map((teamPicture, index) => (
-                        <div id={`team${index}`}
-                             class="carousel-item">
-                            <img src={teamPicture.src} alt="Team member" class="w-60 h-auto rounded-2xl object-cover"/>
-                        </div>
-                ))
-            }
+        <a href="/en-construction" class="p-6 btn btn-primary text-xl text-primary-content rounded-full shadow-none border-0">
+            Rencontrez notre équipe
+        </a>
+
+        <div class="relative w-full mt-16">
+            <div id="team-carousel" class="carousel mx-4 gap-2">
+                {
+                    team.map((member, index) => (
+                            <div id={`equipe-${index}`} class="relative carousel-item justify-center items-end group">
+                                <img src={member.photo.src} alt={member.name}
+                                     class="w-60 h-full rounded-2xl object-cover group-hover:opacity-15 transition-opacity duration-300"/>
+
+                                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                    <h2 class="text-accent text-3xl font-semibold">{member.name}</h2>
+                                </div>
+                            </div>
+                    ))
+                }
+            </div>
+
+            <button
+                    id="team-prev"
+                    type="button"
+                    class="btn btn-circle btn-primary absolute left-0 top-1/2 -translate-y-1/2"
+                    aria-label="Photo précédente"
+            >
+                ❮
+            </button>
+
+            <button
+                    id="team-next"
+                    type="button"
+                    class="btn btn-circle btn-primary absolute right-0 top-1/2 -translate-y-1/2"
+                    aria-label="Photo suivante"
+            >
+                ❯
+            </button>
         </div>
     </div>
 </section>
+
+<script is:inline>
+    if (typeof window !== 'undefined') {
+        window.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('team-carousel');
+            const prevBtn = document.getElementById('team-prev');
+            const nextBtn = document.getElementById('team-next');
+
+            if (!carousel || !prevBtn || !nextBtn) return;
+
+            const getScrollAmount = () => {
+                // Scroll by the width of the visible area
+                return carousel.clientWidth || 300;
+            };
+
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({left: -getScrollAmount(), behavior: 'smooth'});
+            });
+
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({left: getScrollAmount(), behavior: 'smooth'});
+            });
+        });
+    }
+</script>
