@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DO_SPACES_KEY: ${{ secrets.DO_SPACES_KEY }}
-      DO_SPACES_SECRET: ${{ secrets.DO_SPACES_SECRET }}
-      DO_SPACES_SPACE: ${{ secrets.DO_SPACES_SPACE }}
-      DO_SPACES_REGION: ${{ secrets.DO_SPACES_REGION }}
-      DO_SPACES_ENDPOINT: ${{ secrets.DO_SPACES_ENDPOINT }}
+      DO_ACCESS_KEY: ${{ secrets.DO_ACCESS_KEY }}
+      DO_SECRET_KEY: ${{ secrets.DO_SECRET_KEY }}
+      DO_BUCKET: ${{ secrets.DO_BUCKET }}
+      DO_REGION: ${{ secrets.DO_REGION }}
+      DO_ENDPOINT: ${{ secrets.DO_ENDPOINT }}
 
     steps:
       - name: Checkout repository
