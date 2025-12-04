@@ -30,14 +30,16 @@ const {
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 </head>
-<body class="justify-self-center min-h-dvh max-w-7xl bg-white text-base-content">
+<body class="flex flex-col min-h-dvh max-w-7xl mx-auto bg-white text-base-content">
+
 <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
     Aller au contenu
 </a>
 
-<main id="contenu">
+<main id="contenu" class="flex flex-col flex-grow">
     <slot/>
 </main>
+
 <Footer/>
 </body>
 </html>

@@ -1,8 +1,10 @@
 ---
-import Getty1 from "../../assets/photos/gettyimages-108112936-2048x2048.jpg";
-import Getty2 from "../../assets/photos/gettyimages-596435227-2048x2048.jpg";
-import Getty3 from "../../assets/photos/gettyimages-602981371-2048x2048.jpg";
-import Getty4 from "../../assets/photos/gettyimages-1405683451-2048x2048.jpg";
+import Hero1 from "../../assets/photos/visuals/Visuel-06.jpg";
+import Hero2 from "../../assets/photos/visuals/Visuel-03.jpg";
+import Hero3 from "../../assets/photos/visuals/Visuel-02.jpg";
+import Hero4 from "../../assets/photos/visuals/Visuel-05.jpg";
+import Hero5 from "../../assets/photos/visuals/Visuel-04.jpg";
+import Hero6 from "../../assets/photos/visuals/Visuel-07.jpg";
 import Logo from "../../assets/logos/TOUTOLERON_Embleme_blanc.svg";
 import Marquee from "../Marquee.astro";
 
@@ -66,20 +68,26 @@ const {
 
                 <!-- Right collage -->
                 <div class="grid grid-cols-2 gap-4 pr-4 overflow-hidden">
-                    <Marquee axis="y" speed="18s" class="bg-primary">
-                        <img src={Getty1.src} alt=""
+                    <Marquee axis="y" speed="30s" class="bg-primary">
+                        <img src={Hero1.src} alt=""
                              class="block h-[380px] w-full object-cover rounded-2xl"/>
                         <div class="h-[20px]"></div>
-                        <img src={Getty2.src} alt=""
-                             class="block h-[180px] w-full object-cover rounded-2xl"/>
+                        <img src={Hero2.src} alt=""
+                             class="block h-[380px] w-full object-cover rounded-2xl"/>
+                        <div class="h-[20px]"></div>
+                        <img src={Hero3.src} alt=""
+                             class="block h-[380px] w-full object-cover rounded-2xl"/>
                         <div class="h-[20px]"></div>
                     </Marquee>
-                    <Marquee axis="y" speed="18s" class="bg-primary transform rotate-x-180">
-                        <img src={Getty3.src} alt=""
-                             class="block h-[180px] w-full object-cover rounded-2xl transform rotate-x-180"/>
+                    <Marquee axis="y" speed="30s" class="bg-primary transform rotate-x-180">
+                        <img src={Hero4.src} alt=""
+                             class="block h-[380px] w-full object-cover rounded-2xl transform rotate-x-180"/>
                         <div class="h-[20px]"></div>
-                        <img src={Getty4.src} alt=""
-                             class="block h-[380px] w-full object-cover object-[80%_center] rounded-2xl transform rotate-x-180"/>
+                        <img src={Hero5.src} alt=""
+                             class="block h-[380px] w-full object-cover rounded-2xl transform rotate-x-180"/>
+                        <div class="h-[20px]"></div>
+                        <img src={Hero6.src} alt=""
+                             class="block h-[380px] w-full object-cover rounded-2xl transform rotate-x-180"/>
                         <div class="h-[20px]"></div>
                     </Marquee>
                 </div>

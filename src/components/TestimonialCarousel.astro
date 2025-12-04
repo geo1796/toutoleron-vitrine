@@ -1,5 +1,5 @@
 ---
-import PhotoDrDubois from "../assets/photos/gettyimages-1806608544-2048x2048.jpg";
+import PhotoDrDubois from "../assets/photos/visuals/Visuel-09.jpg";
 import TestimonialCard from "./TestimonialCard.astro";
 import Arrow2 from "../assets/svg/arrow-02.svg";
 
@@ -37,14 +37,14 @@ const testimonials: CustomerTestimonial[] = [
 <div class="carousel w-full h-full overflow-hidden">
     {
         testimonials.map((testimonial, index) => (
-                <div id={`slide${index}`} class="carousel-item flex flex-col justify-center items-center w-full h-full">
+                <div id={`temoignage-${index}`} class="carousel-item flex flex-col justify-center items-center w-full h-full">
                     <div class="flex gap-4 lg:p-2">
                         {index > 0 &&
-                                <a href={`#slide${index - 1}`}>
+                                <a href={`#temoignage-${index - 1}`}>
                                     <img class="h-16 w-16" src={Arrow2.src} alt="Précédent"/>
                                 </a>}
                         {index < testimonials.length - 1 &&
-                                <a href={`#slide${index + 1}`}>
+                                <a href={`#temoignage-${index + 1}`}>
                                     <img class="h-16 w-16 rotate-y-180" src={Arrow2.src} alt="Suivant"/>
                                 </a>}
                     </div>

@@ -1,0 +1,17 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <NavBar/>
+    <div class="flex flex-1 flex-col items-center justify-center text-center">
+        <h1 class="text-4xl font-bold mb-4">Page introuvable</h1>
+        <p class="mb-6">
+            La page que vous recherchez n’existe pas ou n’est plus disponible.
+        </p>
+        <a href="/" class="btn btn-primary text-primary-content text-xl p-6 rounded-full shadow-none border-0">
+            Retour à l’accueil
+        </a>
+    </div>
+</Layout>

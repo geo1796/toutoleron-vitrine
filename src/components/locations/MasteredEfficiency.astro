@@ -85,15 +85,15 @@ const cardItems: CardItem[] = [
 
         <div class="carousel gap-12 max-w-80 overflow-hidden lg:hidden">
             {cardItems.map((cardItem, index) => (
-                    <div id={`efficacite-maitrise-${index}`}
+                    <div id={`efficacite-maitrisee-${index}`}
                          class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
                         <div class="flex items-center justify-center gap-4">
                             {index > 0 &&
-                                    <a href={`#efficacite-maitrise-${index - 1}`}>
+                                    <a href={`#efficacite-maitrisee-${index - 1}`}>
                                         <img class="h-16 w-16" src={Arrow2.src} alt="Précédent"/>
                                     </a>}
                             {index < cardItems.length - 1 &&
-                                    <a href={`#efficacite-maitrise-${index + 1}`}>
+                                    <a href={`#efficacite-maitrisee-${index + 1}`}>
                                         <img class="h-16 w-16 rotate-y-180" src={Arrow2.src} alt="Suivant"/>
                                     </a>}
                         </div>
@@ -124,7 +124,7 @@ const cardItems: CardItem[] = [
         <!-- CTA -->
         <div class="mt-8 flex justify-center">
             <a target="_blank"
-               href='https://outlook.office.com/book/test@toutoleron.com/?ismsaljsauthenabled'
+               href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
                class="btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">
                 Je prends rendez-vous
             </a>
