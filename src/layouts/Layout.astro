@@ -41,5 +41,46 @@ const {
 </main>
 
 <Footer/>
+
+<script>
+    if (typeof window !== "undefined") {
+        // === REVEAL + STAGGER =======================================
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    if (!(el instanceof HTMLElement)) return;
+
+                    // Stagger optionnel par groupe
+                    const group = el.closest("[data-anim-group]");
+                    let index = 0;
+                    if (group) {
+                        const items = Array.from(
+                            group.querySelectorAll('[data-anim="reveal"]')
+                        );
+                        index = items.indexOf(el);
+                    }
+
+                    const baseDelay = Number(el.dataset.animDelay || "0"); // ms
+                    const stagger = Number(el.dataset.animStagger || "100"); // ms
+                    const totalDelay = baseDelay + index * stagger;
+
+                    setTimeout(() => {
+                        el.classList.add("is-visible");
+                    }, totalDelay);
+
+                    // Une fois révélé, on n'observe plus
+                    revealObserver.unobserve(el);
+                });
+            },
+            {threshold: 0.15}
+        );
+
+        document
+            .querySelectorAll('[data-anim="reveal"]')
+            .forEach((el) => revealObserver.observe(el));
+    }
+</script>
 </body>
 </html>

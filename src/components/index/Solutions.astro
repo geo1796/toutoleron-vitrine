@@ -14,10 +14,10 @@ const footerDescription = "Un matériel toujours performant, livré, installé e
 
 <!-- Solutions section -->
 <section>
-    <div class="px-6 lg:px-16">
+    <div data-anim-group class="px-6 lg:px-16">
         <!-- Solutions cards title -->
         <div class="mt-14 lg:mt-16 text-center">
-            <h3 class="text-3xl sm:text-5xl">
+            <h3 data-anim="reveal" class="text-3xl sm:text-5xl">
                 Vos besoins, <span class="font-semibold">un écosystème de solutions.</span>
             </h3>
         </div>
@@ -27,7 +27,7 @@ const footerDescription = "Un matériel toujours performant, livré, installé e
             <div class="bg-accent text-accent-content rounded-2xl p-5 sm:p-6 shadow-sm">
                 <div class="flex flex-col items-center justify-center">
                     <img src={EmojiComputer.src} alt="" class="h-8 w-8"/>
-                    <p class="text-center text-sm sm:text-base font-medium">
+                    <p data-anim="reveal" class="text-center text-sm sm:text-base font-medium">
                         Location et maintenance<br/>de votre équipement informatique
                     </p>
                 </div>
@@ -35,7 +35,7 @@ const footerDescription = "Un matériel toujours performant, livré, installé e
             <div class="bg-accent text-accent-content rounded-2xl p-5 sm:p-6 shadow-sm">
                 <div class="flex flex-col items-center justify-center">
                     <img src={EmojiGear.src} alt="" class="h-8 w-8"/>
-                    <p class="text-center text-sm sm:text-base font-medium">
+                    <p data-anim="reveal" class="text-center text-sm sm:text-base font-medium">
                         Paramétrage et formation<br/>au logiciel WEDA
                     </p>
                 </div>
@@ -43,7 +43,7 @@ const footerDescription = "Un matériel toujours performant, livré, installé e
             <div class="bg-accent text-accent-content rounded-2xl p-5 sm:p-6 shadow-sm">
                 <div class="flex flex-col items-center justify-center">
                     <img src={EmojiLock.src} alt="" class="h-8 w-8"/>
-                    <p class="text-center text-sm sm:text-base font-medium">
+                    <p data-anim="reveal" class="text-center text-sm sm:text-base font-medium">
                         Cybersécurité et conformité<br/>pour votre cabinet
                     </p>
                 </div>
@@ -57,89 +57,89 @@ const footerDescription = "Un matériel toujours performant, livré, installé e
 
             <!-- Illustration block -->
             <div id="solutions-collage" class="hidden lg:block relative lg:col-span-2">
-                <img src={ShapeFile.src} alt="" class="w-full h-auto" />
+                <img src={ShapeFile.src} alt="" class="w-full h-auto"/>
                 <div class="absolute inset-20 -right-20 flex flex-col justify-center">
                     <img
-                        src={Hero.src}
-                        alt="Illustration maintenance"
-                        class="w-full h-auto block solutions-hero"
+                            src={Hero.src}
+                            alt="Illustration maintenance"
+                            class="w-full h-auto block solutions-hero"
                     />
                 </div>
             </div>
 
             <!-- Content -->
             <div class="p-0 md:p-8 lg:p-0 lg:col-span-3">
-                <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
+                <div data-anim="reveal" class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
                     LOCATION & MAINTENANCE
                 </div>
-                <h3 class="text-3xl sm:text-4xl leading-tight whitespace-pre-line">
+                <h3 data-anim="reveal" class="text-3xl sm:text-4xl leading-tight whitespace-pre-line">
                     Louez et simplifiez la gestion
                     <span class="font-semibold">de votre équipement informatique.</span>
                 </h3>
-                <p class="mt-4 whitespace-pre-line">{footerDescription}</p>
+                <p data-anim="reveal" class="mt-4 whitespace-pre-line">{footerDescription}</p>
 
                 <ul class="mt-6 space-y-3">
-                    <li class="flex items-start gap-3">
+                    <li data-anim="reveal" class="flex items-start gap-3">
                         <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
                         <span>Frais de livraison, d’installation et de renouvellement inclus.</span>
                     </li>
-                    <li class="flex items-start gap-3">
+                    <li data-anim="reveal" class="flex items-start gap-3">
                         <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
                         <span>Garantie complète du matériel pendant toute la durée de la location.</span>
                     </li>
-                    <li class="flex items-start gap-3">
+                    <li data-anim="reveal" class="flex items-start gap-3">
                         <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
                         <span>Accès direct et illimité à notre service client.</span>
                     </li>
                 </ul>
 
                 <div class="my-8">
-                    <a class="btn btn-accent hover:bg-accent/80 rounded-full p-6 text-xl shadow-none border-0" href="/locations">Je découvre</a>
+                    <a data-anim="reveal" class="btn btn-accent hover:bg-accent/80 rounded-full p-6 text-xl shadow-none border-0"
+                       href="/locations">Je découvre</a>
                 </div>
             </div>
         </div>
     </div>
-  <script>
-    if (typeof window !== "undefined") {
-      const collage = document.getElementById("solutions-collage");
+    <script>
+        if (typeof window !== "undefined") {
+            const collage = document.getElementById("solutions-collage");
 
-      if (collage) {
-        const img = collage.querySelector(".solutions-hero");
+            if (collage) {
+                const img = collage.querySelector(".solutions-hero");
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // La section entre dans le viewport → joue l'anim
-                img?.classList.add("is-visible");
-              } else {
-                // La section sort du viewport → reset à l'état initial
-                img?.classList.remove("is-visible");
-              }
-            });
-          },
-          { threshold: 0.3 }
-        );
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                // La section entre dans le viewport → joue l'anim
+                                img?.classList.add("is-visible");
+                            } else {
+                                // La section sort du viewport → reset à l'état initial
+                                img?.classList.remove("is-visible");
+                            }
+                        });
+                    },
+                    {threshold: 0.3}
+                );
 
-        observer.observe(collage);
-      }
-    }
-  </script>
-  <style>
-    /* État initial : légèrement décalée vers la DROITE, un peu réduite, transparente */
-    .solutions-hero {
-      transform: translateX(3rem) translateY(0.75rem) scale(0.9);
-      opacity: 0;
+                observer.observe(collage);
+            }
+        }
+    </script>
+    <style>
+        /* État initial : légèrement décalée vers la DROITE, un peu réduite, transparente */
+        .solutions-hero {
+            transform: translateX(-3rem) translateY(0.75rem) scale(0.9);
+            opacity: 0;
 
-      transition:
-        transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
-        opacity 1500ms ease-out;
-    }
+            transition: transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 1500ms ease-out;
+        }
 
-    /* État final : position normale dans le ShapeFile (comme ton rendu actuel) */
-    #solutions-collage .solutions-hero.is-visible {
-      transform: translateX(0) translateY(0) scale(1);
-      opacity: 1;
-    }
-  </style>
+        /* État final : position normale dans le ShapeFile (comme ton rendu actuel) */
+        #solutions-collage .solutions-hero.is-visible {
+            transform: translateX(0) translateY(0) scale(1);
+            opacity: 1;
+        }
+    </style>
 </section>

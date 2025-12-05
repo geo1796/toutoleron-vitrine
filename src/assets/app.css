@@ -94,3 +94,23 @@ html, body {
 h1, h2, h3 {
     font-family: var(--font-display);
 }
+
+/* ================================
+   Animations globales
+   ================================ */
+
+/* Révélation de base */
+[data-anim="reveal"] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+            opacity 1500ms ease-out,
+            transform 1500ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* État final quand visible */
+[data-anim="reveal"].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

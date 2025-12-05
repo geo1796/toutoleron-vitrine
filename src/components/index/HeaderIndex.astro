@@ -14,13 +14,13 @@ import NavBar from "../NavBar.astro";
 
         <NavBar/>
 
-        <div class="px-6 lg:px-16 py-10 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div data-anim-group class="px-6 lg:px-16 py-10 lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <!-- Left: text content -->
             <div class="order-2 lg:order-1">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] whitespace-pre-line">
+                <h1 data-anim="reveal" class="text-4xl sm:text-5xl lg:text-6xl leading-[1.05] whitespace-pre-line">
                     Simplifier <span class="font-bold">l'écosystème numérique des soignants.</span>
                 </h1>
-                <p class="mt-6 text-xl whitespace-pre-line max-w-prose">
+                <p data-anim="reveal" class="mt-6 text-xl whitespace-pre-line max-w-prose">
                     Expert en informatique de santé, Toutoléron
                     soutient les soignants avec des solutions fiables et
                     efficaces pour gagner en sérénité, libérer du temps
@@ -28,7 +28,7 @@ import NavBar from "../NavBar.astro";
                 </p>
 
                 <!-- Actions -->
-                <div class="mt-8">
+                <div data-anim="reveal" class="mt-8">
                     <a href="/locations" class="btn btn-primary rounded-full p-6 text-xl text-primary-content shadow-none border-0">Ça
                         m’intéresse</a>
                 </div>
@@ -41,18 +41,18 @@ import NavBar from "../NavBar.astro";
 
         <div class="card lg:card-side">
             <div class="card-body">
-                <div class="flex flex-col">
+                <div data-anim-group class="flex flex-col">
                     <!-- Left: text content -->
-                    <h1 class="text-3xl leading-[1.05] whitespace-pre-line">
+                    <h1 data-anim="reveal" class="text-3xl leading-[1.05] whitespace-pre-line">
                         Simplifier <span class="font-bold">l'écosystème numérique des soignants.</span>
                     </h1>
-                    <p class="mt-6 text-lg whitespace-pre-line max-w-prose">
+                    <p data-anim="reveal" class="mt-6 text-lg whitespace-pre-line max-w-prose">
                         Expert en informatique de santé, Toutoléron soutient les soignants avec des solutions fiables et
                         efficaces pour gagner en sérénité, libérer du temps patient et améliorer le quotidien médical.
                     </p>
 
                     <!-- Actions -->
-                    <div class="mt-8">
+                    <div data-anim="reveal" class="mt-8">
                         <a href="/locations" class="btn btn-primary rounded-full text-xl p-6 text-primary-content shadow-none border-0">Ça
                             m’intéresse</a>
                     </div>
@@ -70,16 +70,16 @@ import NavBar from "../NavBar.astro";
     <!-- Bottom info strip -->
     <div class="bg-secondary border-t border-accent/10">
         <div class="px-6 lg:px-8">
-            <ul class="flex flex-col justify-center sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-accent/20">
-                <li class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
+            <ul data-anim-group class="flex flex-col justify-center sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-accent/20">
+                <li data-anim="reveal" class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
                     <img src={EmojiStar.src} alt="" class="h-5 w-5"/>
                     <span class="text-lg"><strong>4,8/5</strong> satisfaction client</span>
                 </li>
-                <li class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
+                <li data-anim="reveal" class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
                     <img src={EmojiBrain.src} alt="" class="h-5 w-5"/>
                     <span class="text-lg">Expert de référence <strong>WEDA</strong></span>
                 </li>
-                <li class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
+                <li data-anim="reveal" class="flex items-center gap-3 py-4 sm:py-5 sm:px-6">
                     <img src={EmojiPeople.src} alt="" class="h-5 w-5"/>
                     <span class="text-lg"><strong>+3000</strong> professionnels accompagnés</span>
                 </li>

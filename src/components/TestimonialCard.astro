@@ -13,34 +13,34 @@ const {
     photo, occupation, quote, fullName
 } = Astro.props as Props;
 ---
-<div class="relative inline-block min-h-100">
+<div class="relative inline-block min-h-120">
 
-    <img src={ShapeFileSVG.src} class="block min-w-25 w-[full] min-h-80 lg:min-h-120 h-auto" alt=""/>
+    <img src={ShapeFileSVG.src} class="block min-w-25 w-[full] min-h-80 lg:min-h-100 h-auto" alt=""/>
 
-    <div class="absolute inset-0 p-4">
+    <div class="absolute inset-0 p-4 lg:p-8">
 
-        <div class="relative">
-            <h3 class="text-xl lg:text-2xl font-semibold">{fullName}</h3>
+        <div data-anim-group class="relative">
+            <h3 data-anim="reveal" class="text-xl lg:text-2xl">{fullName}</h3>
             <div class="badge badge-fill badge-neutral rounded-full border-2">
-                <p class="text-primary font-semibold text-sm sm:text-md md:text-lg">
+                <p data-anim="reveal" class="text-primary font-semibold text-sm sm:text-md md:text-lg">
                     {occupation}
                 </p>
             </div>
 
-            <p class="mt-2 lg:mt-5 lg:text-lg">
+            <p data-anim="reveal" class="mt-2 lg:mt-5 lg:text-lg">
                 {quote}
             </p>
 
-            <a href="/en-construction"
+            <a data-anim="reveal" href="/en-construction"
                class="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-2">
                 Lire le témoignage
                 <Arrow1 class="w-5 h-5"/>
             </a>
 
-            <div class="block relative h-32 lg:h-48 w-32 lg:w-48 overflow-hidden rounded-2xl mt-2 lg:mt-8">
-                <img src={photo.src}
+            <div class="block relative h-32 w-32 overflow-hidden rounded-2xl mt-2 lg:mt-8">
+                <img data-anim="reveal" src={photo.src}
                      alt="Portrait client"
-                     class="absolute inset-0 h-full w-full object-cover scale-150 object-[50%_0%] [transform-origin:50%_0%]"/>
+                     class="absolute inset-0 h-full w-full object-cover scale-125 object-[50%_0%] [transform-origin:50%_0%]"/>
             </div>
 
         </div>

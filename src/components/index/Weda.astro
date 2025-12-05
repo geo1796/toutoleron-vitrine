@@ -32,23 +32,23 @@ const {
 <section id="solutions-weda">
     <div class="p-8 md:p-16 grid lg:grid-cols-5 gap-10 items-center">
         <!-- Left content -->
-        <div class="lg:col-span-3">
-            <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
+        <div data-anim-group class="lg:col-span-3">
+            <div data-anim="reveal" class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
                 {badge}
             </div>
 
-            <h2 class="text-4xl leading-tight">
+            <h2 data-anim="reveal" class="text-4xl leading-tight">
                 {titleLine1}<br/>
                 <span class="font-semibold">{titleLine2}</span>
             </h2>
 
-            <p class="mt-6 text-base sm:text-xl whitespace-pre-line">
+            <p data-anim="reveal" class="mt-6 text-base sm:text-xl whitespace-pre-line">
                 {description}
             </p>
 
             <ul class="mt-6 text-base sm:text-xl space-y-3">
                 {bullets.map((item) => (
-                        <li class="flex items-start gap-3">
+                        <li data-anim="reveal" class="flex items-start gap-3">
                             <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
                             <span>{item}</span>
                         </li>
@@ -56,9 +56,9 @@ const {
             </ul>
 
             <div class="mt-8 flex flex-wrap gap-4">
-                <a class="btn btn-accent hover:bg-accent/80 border-0 shadow-none text-xl text-accent-content rounded-full p-6"
+                <a data-anim="reveal" class="btn btn-accent hover:bg-accent/80 border-0 shadow-none text-xl text-accent-content rounded-full p-6"
                    href="/en-construction">{ctaPrimary}</a>
-                <a class="btn btn-primary text-lg md:text-xl text-accent-content rounded-full p-6 border-0 shadow-none"
+                <a data-anim="reveal" class="btn btn-primary text-lg md:text-xl text-accent-content rounded-full p-6 border-0 shadow-none"
                    target="_blank" href="https://base-de-connaissances.toutoleron.com/">{ctaSecondary}</a>
             </div>
         </div>

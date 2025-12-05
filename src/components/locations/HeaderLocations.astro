@@ -4,27 +4,30 @@ import CheckIcon from "../../assets/svg/check.svg";
 ---
 
 <section id="header-locations">
-    <NavBar/>
+    <div class="p-2 xl:p-0">
+        <NavBar/>
+    </div>
     <div class="h-8"/>
 
-    <div class="px-8 md:px-16 grid md:grid-cols-3 gap-12 justify-center items-center">
+    <div data-anim-group class="px-8 md:px-16 grid md:grid-cols-3 gap-12 justify-center items-center">
         <!-- Left: text content -->
         <div class="md:col-span-2">
-            <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
+            <div data-anim="reveal" class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
                 LOCATION & MAINTENANCE
             </div>
 
-            <h1 class="mt-6 text-3xl md:text-5xl leading-[1.05]">
-                Location de matériel informatique pour <span class="font-semibold">libérer le quotidien des soignants.</span>
+            <h1 data-anim="reveal" class="mt-6 text-3xl md:text-5xl leading-[1.05]">
+                Location de matériel informatique pour <span
+                    class="font-semibold">libérer le quotidien des soignants.</span>
             </h1>
 
-            <p class="mt-6 text-lg md:text-xl max-w-2xl">
+            <p data-anim="reveal" class="mt-6 text-lg md:text-xl max-w-2xl">
                 Toutoléron offre la solution clé en main idéale pour aider les soignants à garantir le niveau
                 opérationnel optimal de leur activité dans la sérénité, sans contrainte technique ni perte de temps
                 informatique.
             </p>
 
-            <div class="mt-8">
+            <div data-anim="reveal" class="mt-8">
                 <a href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
                    target="_blank"
                    class="btn btn-primary rounded-full text-xl p-6 text-primary-content shadow-none border-0">
@@ -34,7 +37,7 @@ import CheckIcon from "../../assets/svg/check.svg";
         </div>
         <!-- Right: key benefits -->
         <div class="flex flex-col items-center justify-center gap-6">
-            <div class="card bg-white w-full">
+            <div data-anim="reveal" class="card bg-white w-full">
                 <div class="card-body flex-row gap-4 items-start">
                     <img src={CheckIcon.src} alt="" class="h-6 w-6 shrink-0"/>
                     <div>
@@ -45,7 +48,7 @@ import CheckIcon from "../../assets/svg/check.svg";
                 </div>
             </div>
 
-            <div class="card bg-white w-full">
+            <div data-anim="reveal" class="card bg-white w-full">
                 <div class="card-body flex-row gap-4 items-start">
                     <img src={CheckIcon.src} alt="" class="h-6 w-6 shrink-0"/>
                     <div>
@@ -56,7 +59,7 @@ import CheckIcon from "../../assets/svg/check.svg";
                 </div>
             </div>
 
-            <div class="card bg-white w-full">
+            <div data-anim="reveal" class="card bg-white w-full">
                 <div class="card-body flex-row gap-4 items-start">
                     <img src={CheckIcon.src} alt="" class="h-6 w-6 shrink-0"/>
                     <div>

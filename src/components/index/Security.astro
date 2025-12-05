@@ -44,23 +44,23 @@ const {
             </div>
 
             <!-- Right content -->
-            <div class="lg:col-span-3">
-                <div class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
+            <div data-anim-group class="lg:col-span-3">
+                <div data-anim="reveal" class="badge badge-outline badge-primary rounded-full border-2 mb-4 font-semibold text-xs sm:text-sm md:text-md">
                     {badge}
                 </div>
 
-                <h2 class="text-4xl leading-tight">
+                <h2 data-anim="reveal" class="text-4xl leading-tight">
                     Protégez vos données et votre<br/>
                     activité, <span class="font-semibold">simplement.</span>
                 </h2>
 
-                <p class="mt-6 text-base sm:text-xl">
+                <p data-anim="reveal" class="mt-6 text-base sm:text-xl">
                     {description}
                 </p>
 
                 <ul class="mt-6 text-base sm:text-lg space-y-3">
                     {bullets.map((item) => (
-                            <li class="flex items-start gap-3">
+                            <li data-anim="reveal" class="flex items-start gap-3">
                                 <img src={CheckSVG.src} alt="" class="h-5 w-5 mt-0.5"/>
                                 <span>{item}</span>
                             </li>
@@ -68,7 +68,7 @@ const {
                 </ul>
 
                 <div class="mt-8">
-                    <a class="btn btn-accent hover:bg-accent/80 text-accent-content text-xl rounded-full p-6 shadow-none border-0"
+                    <a data-anim="reveal" class="btn btn-accent hover:bg-accent/80 text-accent-content text-xl rounded-full p-6 shadow-none border-0"
                        href="/en-construction">{ctaPrimary}</a>
                 </div>
             </div>

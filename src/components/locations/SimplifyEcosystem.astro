@@ -18,19 +18,19 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
                 />
             </div>
 
-            <div class="col-span-3 flex flex-col gap-4 lg:gap-8 justify-center items-start">
+            <div data-anim-group class="col-span-3 flex flex-col gap-4 lg:gap-8 justify-center items-start">
 
-                <h2 class="text-3xl lg:text-4xl xl:text-5xl leading-tight">
+                <h2 data-anim="reveal" class="text-3xl lg:text-4xl xl:text-5xl leading-tight">
                     Prêt à simplifier votre<br/>
                     <span class="font-semibold">écosystème numérique ?</span>
                 </h2>
 
-                <p class="text-lg lg:text-xl">
+                <p data-anim="reveal" class="text-lg lg:text-xl">
                     Pour toutes les fois où l’informatique<br/>
                     vous a freiné, pensez Toutoléron.
                 </p>
 
-                <div class="mt-8">
+                <div data-anim="reveal" class="mt-8">
                     <a href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
                        target="_blank"
                        class="btn btn-primary rounded-full p-6 text-xl text-primary-content shadow-none border-0">
@@ -40,63 +40,22 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
             </div>
         </div>
     </div>
-    <script>
-      if (typeof window !== "undefined") {
-        const collage = document.getElementById("simplify-ecosystem-hero-collage");
-
-        if (collage) {
-          const img = collage.querySelector(".simplify-ecosystem-hero");
-
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  img?.classList.add("is-visible");
-                } else {
-                  img?.classList.remove("is-visible");
-                }
-              });
-            },
-            { threshold: 0.3 }
-          );
-
-          observer.observe(collage);
-        }
-      }
-    </script>
-    <style>
-      /* État initial : légèrement décalée vers la GAUCHE, réduite, transparente */
-      .simplify-ecosystem-hero {
-        transform: translateX(-3rem) translateY(0.75rem) scale(0.9);
-        opacity: 0;
-
-        transition:
-          transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
-          opacity 1500ms ease-out;
-      }
-
-      /* État final : position normale */
-      #simplify-ecosystem-hero-collage .simplify-ecosystem-hero.is-visible {
-        transform: translateX(0) translateY(0) scale(1);
-        opacity: 1;
-      }
-    </style>
 </section>
 
 <section id="simplifier-ecosysteme-numerique-mobile" class="md:hidden">
-    <div class="flex flex-col gap-4 items-center justify-center text-center bg-base-200 py-16">
+    <div data-anim-group class="flex flex-col gap-4 items-center justify-center text-center bg-base-200 py-16">
 
-        <h2 class="text-3xl leading-tight">
+        <h2 data-anim="reveal" class="text-3xl leading-tight">
             Prêt à simplifier votre<br/>
             <span class="font-semibold">écosystème numérique ?</span>
         </h2>
 
-        <p class="text-lg lg:text-xl">
+        <p data-anim="reveal" class="text-lg lg:text-xl">
             Pour toutes les fois où l’informatique vous a freiné,<br/>
             pensez Toutoléron.
         </p>
 
-        <div class="mt-8">
+        <div data-anim="reveal" class="mt-8">
             <a href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
                target="_blank"
                class="btn btn-primary rounded-full p-6 text-xl text-primary-content shadow-none border-0">
@@ -108,3 +67,46 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
 
     <div class="h-16"/>
 </section>
+
+
+<script>
+    if (typeof window !== "undefined") {
+        const collage = document.getElementById("simplify-ecosystem-hero-collage");
+
+        if (collage) {
+            const img = collage.querySelector(".simplify-ecosystem-hero");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            img?.classList.add("is-visible");
+                        } else {
+                            img?.classList.remove("is-visible");
+                        }
+                    });
+                },
+                { threshold: 0.3 }
+            );
+
+            observer.observe(collage);
+        }
+    }
+</script>
+<style>
+    /* État initial : légèrement décalée vers la GAUCHE, réduite, transparente */
+    .simplify-ecosystem-hero {
+        transform: translateX(-3rem) translateY(0.75rem) scale(0.9);
+        opacity: 0;
+
+        transition:
+                transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 1500ms ease-out;
+    }
+
+    /* État final : position normale */
+    #simplify-ecosystem-hero-collage .simplify-ecosystem-hero.is-visible {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+</style>

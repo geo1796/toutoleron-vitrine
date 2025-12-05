@@ -35,21 +35,21 @@ const steps: Step[] = [
 
     <img src={Logo.src} alt="Logo" class="h-200 w-auto opacity-30"/>
 
-    <div class="absolute flex flex-col items-center p-6 lg:p-16">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-10">
+    <div data-anim-group class="absolute flex flex-col items-center p-6 lg:p-16">
+        <h2 data-anim="reveal" class="text-3xl md:text-4xl lg:text-5xl text-center mb-10">
             Comment ça <span class="font-semibold">marche</span> ?
         </h2>
 
         <div class="hidden md:block mt-8 space-y-6 lg:space-y-8">
             {steps.map((s) => (
-                    <div class="card bg-base-100 rounded-2xl">
+                    <div data-anim="reveal" class="card bg-base-100 rounded-2xl">
                         <div class="card-body">
                             <div class="flex gap-6 items-center">
                                 <h2 class="text-primary text-3xl sm:text-4xl font-semibold leading-none select-none">
                                     {s.number}
                                 </h2>
                                 <div>
-                                    <h3 class="text-xl font-semibold">{s.title}</h3>
+                                    <p class="text-xl font-semibold">{s.title}</p>
                                     <p class="mt-2 text-base-content/80">{s.text}</p>
                                 </div>
                             </div>
@@ -58,9 +58,9 @@ const steps: Step[] = [
             ))}
         </div>
 
-        <div class="carousel gap-12 max-w-80 overflow-hidden md:hidden">
+        <div id="comment-ca-marche-carousel" class="carousel gap-12 max-w-80 overflow-hidden md:hidden">
             {steps.map((step, index) => (
-                    <div id={`comment-ca-marche-${index}`} class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
+                    <div data-anim="reveal" id={`comment-ca-marche-${index}`} class="carousel-item flex flex-col items-center justify-center max-w-80 h-full">
                         <div class="flex items-center justify-center gap-4">
                             {index > 0 &&
                                     <a href={`#comment-ca-marche-${index - 1}`}>
@@ -78,7 +78,7 @@ const steps: Step[] = [
                                         {step.number}
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-semibold">{step.title}</h3>
+                                        <p class="text-xl font-semibold">{step.title}</p>
                                         <p class="mt-2 text-base-content/80">{step.text}</p>
                                     </div>
                                 </div>
@@ -90,3 +90,32 @@ const steps: Step[] = [
 
     </div>
 </section>
+<script>
+    if (typeof window !== "undefined") {
+        const carousel = document.getElementById("comment-ca-marche-carousel");
+        if (carousel) {
+            const links = carousel.querySelectorAll('a[href^="#comment-ca-marche-"]');
+
+            links.forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault();
+
+                    const href = link.getAttribute("href");
+                    if (!href) return;
+
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (!target || !(target instanceof HTMLElement)) return;
+
+                    // Position horizontale de la slide par rapport au conteneur du carousel
+                    const targetLeft = target.offsetLeft - carousel.offsetLeft;
+
+                    carousel.scrollTo({
+                        left: targetLeft,
+                        behavior: "smooth",
+                    });
+                });
+            });
+        }
+    }
+</script>

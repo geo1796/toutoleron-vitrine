@@ -27,16 +27,16 @@ const {
 ---
 
 <section id="branding-locations">
-    <div class="px-4 md:px-16">
+    <div data-anim-group class="px-4 md:px-16">
         <!-- Partners row -->
         <div class="flex items-center justify-start gap-2 sm:gap-4 md:gap-8 text-base-content/70 px-2">
             {partners.map((p) => (
-                    <img src={p} alt="Partenaire" class="w-10 sm:w-18 lg:w-22 h-auto"/>
+                    <img data-anim="reveal" src={p} alt="Partenaire" class="w-10 sm:w-18 lg:w-22 h-auto"/>
             ))}
         </div>
 
         <!-- Hero image -->
-        <div class="w-full aspect-[531.78/245.43] md:transform md:-translate-y-12">
+        <div data-anim="reveal" class="w-full aspect-[531.78/245.43] md:transform md:-translate-y-12">
             <img
                     src={Hero.src}
                     alt="Matériel informatique en cabinet"
@@ -56,15 +56,15 @@ const {
 
     <!-- Text + Illustration block -->
     <div class="px-8 md:px-16 grid md:grid-cols-3 gap-8 items-center">
-        <div class="md:col-span-2 space-y-12">
-            <h2 class="text-xl sm:text-2xl md:text-4xl leading-tight">
+        <div data-anim-group class="md:col-span-2 space-y-12">
+            <h2 data-anim="reveal" class="text-xl sm:text-2xl md:text-4xl leading-tight">
                 {titleLine1} <br/>
                 <span class="font-semibold">{titleLine2}</span>
             </h2>
 
-            <p class="mt-6 max-w-2xl text-lg">{paragraph}</p>
+            <p data-anim="reveal" class="mt-6 max-w-2xl text-lg">{paragraph}</p>
 
-            <p class="mt-6 font-semibold text-lg max-w-2xl">{highlight}</p>
+            <p data-anim="reveal" class="mt-6 font-semibold text-lg max-w-2xl">{highlight}</p>
         </div>
 
         <div id="branding-illustration-collage" class="hidden md:block relative">

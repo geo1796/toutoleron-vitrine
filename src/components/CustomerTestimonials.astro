@@ -14,18 +14,19 @@ interface Props {
 
 <section id="temoignages" class="block bg-primary py-4">
     <div class="mx-auto lg:max-h-200">
-        <div class="grid md:grid-cols-2 items-center">
+        <div class="grid md:grid-cols-2 items-center lg:px-8">
             <!-- Left intro -->
-            <div class="relative flex justify-center items-center">
+            <div class="relative flex justify-center items-center max-h-120">
 
-                <img src={Logo.src} alt="Logo" class="w-auto h-60 lg:h-120 opacity-25"/>
+                <img src={Logo.src} alt="Logo"
+                     class="w-auto h-60 lg:h-180 lg:transform lg:translate-y-20 lg:-translate-x-40 opacity-15 overflow-hidden"/>
 
-                <div class="absolute inset-0 md:pl-16">
+                <div data-anim-group class="absolute inset-0 md:pl-16">
                     <div class="h-full flex flex-col justify-center items-center md:items-start">
-                        <h2 class="text-2xl lg:text-5xl leading-tight whitespace-pre-line">
+                        <h2 data-anim="reveal" class="text-2xl lg:text-5xl leading-tight whitespace-pre-line">
                             Nos clients médecins <br/> <span class="font-semibold">en parlent le mieux.</span>
                         </h2>
-                        <p class="mt-6 whitespace-pre-line">
+                        <p data-anim="reveal" class="mt-6 whitespace-pre-line">
                             Leur quotidien a changé.
                             Ils nous le disent, simplement.
                         </p>
