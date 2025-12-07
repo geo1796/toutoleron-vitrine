@@ -1,7 +1,9 @@
 ---
-import PhotoDrDubois from "../assets/photos/visuals/Visuel-09.jpg";
+import DrSalfati from "../assets/illustrations/temoignage_6.png";
+import DrDang from "../assets/illustrations/temoignage_2.png";
+import DrAumarechal from "../assets/illustrations/temoignage_3.png";
 import TestimonialCard from "./TestimonialCard.astro";
-import Arrow2 from "../assets/svg/arrow-02.svg";
+import ArrowSVG from "../assets/svg/arrow-02.svg";
 
 class CustomerTestimonial {
     constructor(public photo: ImageMetadata, public name: string, public occupation: string, public quote: string) {
@@ -14,22 +16,22 @@ class CustomerTestimonial {
 
 const testimonials: CustomerTestimonial[] = [
     new CustomerTestimonial(
-        PhotoDrDubois,
-        'Dr. Sarah Dubois',
-        'Médecin généraliste',
-        'Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !',
+        DrSalfati,
+        'Dr. Charles SALFATI',
+        'Neuropsychiatre',
+        'Je recommande vivement Toutoleron, qui avec Weda gère parfaitement mon logiciel médical. Leur hotline est réactive et facilement joignable. L’équipe est disponible, notamment Fanny et Charlotte à l’accueil, toujours prêtes à aider par téléphone ou par mail. Cette dimension familiale et de proximité est très appréciable.',
     ),
     new CustomerTestimonial(
-        PhotoDrDubois,
-        'Dr. Sarah Dubois',
+        DrDang,
+        'Dr. Isabelle DANG',
         'Médecin généraliste',
-        'Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !',
+        'Je suis pleinement satisfaite des services de Toutoléron qui assure la maintenance de mon logiciel Medical Weda. Leur réactivité est exemplaire : ils répondent rapidement et efficacement. ' + 'Les formations qu’ils proposent sont parfaitement adaptées à mes besoins, ce qui me permet d’utiliser mon logiciel dans les meilleures conditions. Un vrai partenaire de confiance !',
     ),
     new CustomerTestimonial(
-        PhotoDrDubois,
-        'Dr. Sarah Dubois',
+        DrAumarechal,
+        'Dr. Alain AUMARECHAL',
         'Médecin généraliste',
-        'Toutoléron a optimisé mon cabinet : matériel en location, maintenance rapide, formations adaptées. Un partenaire indispensable au quotidien !',
+        'Le support assuré par Toutoleron est un vrai atout : réactivité, écoute et solutions adaptées à chaque situation.',
     ),
 ];
 ---
@@ -37,15 +39,16 @@ const testimonials: CustomerTestimonial[] = [
 <div id="testimonial-carousel" class="carousel w-full h-full overflow-hidden">
     {
         testimonials.map((testimonial, index) => (
-                <div id={`temoignage-${index}`} class="carousel-item flex flex-col justify-center items-center w-full h-full">
+                <div id={`temoignage-${index}`}
+                     class="carousel-item flex flex-col justify-center items-center w-full h-full">
                     <div class="flex gap-4 lg:p-2">
                         {index > 0 &&
                                 <a href={`#temoignage-${index - 1}`}>
-                                    <img class="h-16 w-16" src={Arrow2.src} alt="Précédent"/>
+                                    <img class="h-16 w-16" src={ArrowSVG.src} alt="Précédent"/>
                                 </a>}
                         {index < testimonials.length - 1 &&
                                 <a href={`#temoignage-${index + 1}`}>
-                                    <img class="h-16 w-16 rotate-y-180" src={Arrow2.src} alt="Suivant"/>
+                                    <img class="h-16 w-16 rotate-y-180" src={ArrowSVG.src} alt="Suivant"/>
                                 </a>}
                     </div>
                     <TestimonialCard fullName={testimonial.name} occupation={testimonial.occupation}

@@ -1,6 +1,6 @@
 ---
 import ShapeFileSVG from "../assets/svg/shape-file-04-bis.svg";
-import Arrow1 from "../assets/svg/arrow-01.svg";
+import Arrow from "../assets/svg/arrow-01.svg";
 
 interface Props {
     photo: ImageMetadata;
@@ -27,20 +27,20 @@ const {
                 </p>
             </div>
 
-            <p data-anim="reveal" class="mt-2 lg:mt-5 lg:text-lg">
+            <p data-anim="reveal" class="mt-2 lg:mt-5 lg:text-lg overflow-hidden h-32 overflow-y-auto pr-2">
                 {quote}
             </p>
 
-            <a data-anim="reveal" href="/en-construction"
-               class="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-2">
-                Lire le témoignage
-                <Arrow1 class="w-5 h-5"/>
-            </a>
+            <!--<a data-anim="reveal" href="/en-construction"-->
+            <!--   class="mt-6 inline-flex items-center gap-2 font-semibold text-accent underline underline-offset-2">-->
+            <!--    Lire le témoignage-->
+            <!--    <Arrow class="w-5 h-5"/>-->
+            <!--</a>-->
 
             <div class="block relative h-32 w-32 overflow-hidden rounded-2xl mt-2 lg:mt-8">
                 <img data-anim="reveal" src={photo.src}
                      alt="Portrait client"
-                     class="absolute inset-0 h-full w-full object-cover scale-125 object-[50%_0%] [transform-origin:50%_0%]"/>
+                     class="absolute inset-0 h-full w-full object-cover object-[50%_0%] [transform-origin:50%_0%]"/>
             </div>
 
         </div>
