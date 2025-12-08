@@ -11,7 +11,7 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
             </a>
         </div>
 
-        <a target="_blank"
+        <a target="_blank" onclick="plausible('cta_navbar')"
            href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
            class="md:hidden btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0">
             Prendre RDV
@@ -38,13 +38,15 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
                         <img class="h-3 w-3" src={ArrowMenu.src} alt="Voir les ressources"/>
                     </div>
                     <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
-                        <li><a class="hover:link" target="_blank" href="https://base-de-connaissances.toutoleron.com/">
+                        <li><a class="hover:link" onclick="plausible('kb_navbar')"
+                               target="_blank" href="https://base-de-connaissances.toutoleron.com/">
                             Base de connaissances
                         </a></li>
                     </ul>
                 </div>
 
                 <a class="hidden md:flex btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0"
+                   onclick="plausible('cta_navbar')"
                    target="_blank"
                    href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'>Prendre
                     RDV</a>

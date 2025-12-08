@@ -12,9 +12,9 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
 
             <div id="simplify-ecosystem-hero-collage" class="hidden md:block md:col-span-2 pl-4 relative">
                 <img
-                    src={Hero.src}
-                    alt=""
-                    class="simplify-ecosystem-hero"
+                        src={Hero.src}
+                        alt=""
+                        class="simplify-ecosystem-hero"
                 />
             </div>
 
@@ -31,7 +31,8 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
                 </p>
 
                 <div data-anim="reveal" class="mt-8">
-                    <a href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
+                    <a onclick="plausible('cta_simplifier_ecosysteme_numerique')"
+                       href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
                        target="_blank"
                        class="btn btn-primary rounded-full p-6 text-xl text-primary-content shadow-none border-0">
                         Je prends rendez-vous
@@ -56,7 +57,8 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
         </p>
 
         <div data-anim="reveal" class="mt-8">
-            <a href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
+            <a onclick="plausible('cta_simplifier_ecosysteme_numerique')"
+               href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
                target="_blank"
                class="btn btn-primary rounded-full p-6 text-xl text-primary-content shadow-none border-0">
                 Je prends rendez-vous
@@ -86,7 +88,7 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
                         }
                     });
                 },
-                { threshold: 0.3 }
+                {threshold: 0.3}
             );
 
             observer.observe(collage);
@@ -99,9 +101,8 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
         transform: translateX(-3rem) translateY(0.75rem) scale(0.9);
         opacity: 0;
 
-        transition:
-                transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
-                opacity 1500ms ease-out;
+        transition: transform 1500ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1500ms ease-out;
     }
 
     /* État final : position normale */

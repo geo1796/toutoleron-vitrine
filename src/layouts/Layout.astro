@@ -29,7 +29,15 @@ const {
             <link rel="canonical" href={canonical}/>}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-</head>
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-S89g2IUxM_TW15-CoWehJ.js"></script>
+    <script>
+    window.plausible=window.plausible||function(){(plausible.q = plausible.q || []).push(arguments)},plausible.init=plausible.init||function(i){plausible.o = i || {}};
+    plausible.init()
+    </script>
+
+    </head>
 <body class="flex flex-col min-h-dvh max-w-7xl mx-auto bg-white text-base-content">
 
 <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
@@ -43,44 +51,49 @@ const {
 <Footer/>
 
 <script>
-    if (typeof window !== "undefined") {
-        // === REVEAL + STAGGER =======================================
-        const revealObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    const el = entry.target;
-                    if (!(el instanceof HTMLElement)) return;
+if (typeof window !== "undefined") {
+    // === REVEAL + STAGGER =======================================
 
-                    // Stagger optionnel par groupe
-                    const group = el.closest("[data-anim-group]");
-                    let index = 0;
-                    if (group) {
-                        const items = Array.from(
-                            group.querySelectorAll('[data-anim="reveal"]')
-                        );
-                        index = items.indexOf(el);
-                    }
+    const revealObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                if (!(el instanceof HTMLElement)) return;
 
-                    const baseDelay = Number(el.dataset.animDelay || "0"); // ms
-                    const stagger = Number(el.dataset.animStagger || "100"); // ms
-                    const totalDelay = baseDelay + index * stagger;
+                // Stagger optionnel par groupe
 
-                    setTimeout(() => {
-                        el.classList.add("is-visible");
-                    }, totalDelay);
+                const group = el.closest("[data-anim-group]");
+                let index = 0;
+                if (group) {
+                    const items = Array.from(
+                        group.querySelectorAll('[data-anim="reveal"]')
+                    );
+                    index = items.indexOf(el);
+                }
 
-                    // Une fois révélé, on n'observe plus
-                    revealObserver.unobserve(el);
-                });
-            },
-            {threshold: 0.15}
-        );
+                const baseDelay = Number(el.dataset.animDelay || "0"); // ms
 
-        document
-            .querySelectorAll('[data-anim="reveal"]')
-            .forEach((el) => revealObserver.observe(el));
-    }
+                const stagger = Number(el.dataset.animStagger || "100"); // ms
+
+                const totalDelay = baseDelay + index * stagger;
+
+                setTimeout(() => {
+                    el.classList.add("is-visible");
+                }, totalDelay);
+
+                // Une fois révélé, on n'observe plus
+
+                revealObserver.unobserve(el);
+            });
+        },
+        {threshold: 0.15}
+    );
+
+    document
+        .querySelectorAll('[data-anim="reveal"]')
+        .forEach((el) => revealObserver.observe(el));
+}
 </script>
 </body>
 </html>
