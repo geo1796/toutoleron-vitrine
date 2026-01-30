@@ -11,16 +11,35 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
             </a>
         </div>
 
-        <a target="_blank" onclick="plausible('cta_navbar')"
-           href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
-           class="sm:hidden btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0">
-            Prendre RDV
-        </a>
+        <!--<a target="_blank" onclick="plausible('cta_navbar')"-->
+        <!--   href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'-->
+        <!--   class="sm:hidden btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0">-->
+        <!--    Prendre RDV-->
+        <!--</a>-->
+
+        <div class="dropdown dropdown-center">
+            <div tabindex="0" role="button"
+                 class="sm:hidden btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0">
+                Prendre RDV
+            </div>
+            <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
+                <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
+                       target="_blank"
+                       href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
+                    Équipe commerciale
+                </a></li>
+                <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
+                       target="_blank"
+                       href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
+                    Équipe technique
+                </a></li>
+            </ul>
+        </div>
 
         <div class="flex grow justify-end">
             <div class="flex items-stretch">
 
-                <div class="dropdown">
+                <div class="dropdown dropdown-center">
                     <div tabindex="0" role="button"
                          class="btn btn-link link-hover text-accent-content text-md">
                         Solutions
@@ -31,7 +50,7 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
                     </ul>
                 </div>
 
-                <div class="dropdown dropdown-end">
+                <div class="dropdown dropdown-center">
                     <div tabindex="0" role="button"
                          class="btn btn-link link-hover text-accent-content text-md">
                         Ressources
@@ -45,11 +64,24 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
                     </ul>
                 </div>
 
-                <a class="hidden sm:flex btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0"
-                   onclick="plausible('cta_navbar')"
-                   target="_blank"
-                   href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'>Prendre
-                    RDV</a>
+                <div class="dropdown dropdown-end">
+                    <div tabindex="0" role="button"
+                         class="hidden sm:flex btn btn-primary text-md p-4 text-primary-content rounded-full shadow-none border-0">
+                        Prendre RDV
+                    </div>
+                    <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
+                        <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
+                               target="_blank"
+                               href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
+                            Équipe commerciale
+                        </a></li>
+                        <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
+                               target="_blank"
+                               href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
+                            Équipe technique
+                        </a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

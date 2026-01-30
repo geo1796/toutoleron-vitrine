@@ -28,11 +28,24 @@ import CheckIcon from "../../assets/svg/check.svg";
             </p>
 
             <div data-anim="reveal" class="mt-8">
-                <a href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
-                   target="_blank" onclick="plausible('cta_header_locations')"
-                   class="btn btn-primary rounded-full text-xl p-6 text-primary-content shadow-none border-0">
-                    Je prends rendez-vous
-                </a>
+                <div class="dropdown dropdown-center dropdown-top md:dropdown-bottom">
+                    <div tabindex="0" role="button"
+                         class="m-1 btn btn-primary text-xl p-6 text-primary-content rounded-full shadow-none border-0">
+                        Je prends rendez-vous
+                    </div>
+                    <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
+                        <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
+                               target="_blank"
+                               href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
+                            Équipe commerciale
+                        </a></li>
+                        <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
+                               target="_blank"
+                               href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
+                            Équipe technique
+                        </a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Right: key benefits -->

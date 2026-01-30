@@ -125,11 +125,29 @@ const cardItems: CardItem[] = [
 
         <!-- CTA -->
         <div data-anim="reveal" class="mt-8 flex justify-center">
-            <a target="_blank" onclick="plausible('cta_efficacite_maitrisee')"
-               href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'
-               class="btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">
-                Je prends rendez-vous
-            </a>
+            <!--<a target="_blank" onclick="plausible('cta_efficacite_maitrisee')"-->
+            <!--   href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'-->
+            <!--   class="btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">-->
+            <!--    Je prends rendez-vous-->
+            <!--</a>-->
+            <div class="dropdown dropdown-center">
+                <div tabindex="0" role="button"
+                     class="mb-1 btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">
+                    Je prends rendez-vous
+                </div>
+                <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
+                    <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
+                           target="_blank"
+                           href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
+                        Équipe commerciale
+                    </a></li>
+                    <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
+                           target="_blank"
+                           href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
+                        Équipe technique
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
