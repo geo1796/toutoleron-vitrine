@@ -1,8 +1,9 @@
 ---
-import LogoQualiopi from "../../assets/svg/Logo_QUALIOPI.svg";
+import LogoQualiopi from "../../assets/qualiopi/logo_qualiopi.png";
 import LogoToutoleron from "../../assets/logos/TOUTOLERON_Embleme_blanc.svg";
 import LogotypeToutoleron from "../../assets/logos/TOUTOLERON_Logotype_blanc.svg";
 import Illustration from "../../assets/illustrations/TOUTOLERON_illu_partenaire_professionnel_sante.png";
+import CertificatQualiopiUrl from "../../assets/qualiopi/certificat_qualiopi.pdf?url";
 ---
 
 <!-- Pre-footer callout -->
@@ -44,14 +45,17 @@ import Illustration from "../../assets/illustrations/TOUTOLERON_illu_partenaire_
                     <p class="opacity-90">support@toutoleron.com</p>
                 </div>
                 <div class="pt-16">
-                    <div class="bg-base-100 text-base-content rounded-xl p-3 w-[240px] max-w-full">
+                    <div class="text-base-content rounded-xl w-[300px]">
                         <img src={LogoQualiopi.src} alt="Logo Qualiopi" class="w-full h-auto"/>
                     </div>
                 </div>
-                <p class="text-xs opacity-90 max-w-xs">
-                    La certification qualité a été délivrée au titre de la catégorie d’action suivante : L. 6313-1 - 1°
-                    Actions de formation
-                </p>
+
+                <button type="button"
+                        class="btn btn-primary btn-sm rounded-full text-primary-content shadow-none border-0"
+                        onclick="document.getElementById('certificat-qualiopi-modal').showModal()">
+                    Certificat QUALIOPI
+                </button>
+                
                 <p class="text-xs text-accent-content/50">© 2025 Toutoleron. Tous droits réservés.</p>
             </div>
 
@@ -122,3 +126,19 @@ import Illustration from "../../assets/illustrations/TOUTOLERON_illu_partenaire_
         </div>
     </div>
 </footer>
+
+<!-- Visionneuse PDF du certificat QUALIOPI -->
+<dialog id="certificat-qualiopi-modal" class="modal" data-pdf-src={CertificatQualiopiUrl}>
+    <div class="modal-box w-11/12 max-w-5xl h-[85vh] p-0 flex flex-col overflow-hidden">
+        <div class="flex items-center justify-between gap-4 p-3 border-b border-base-300">
+            <h3 class="font-bold text-lg">Certificat QUALIOPI</h3>
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost" aria-label="Fermer">✕</button>
+            </form>
+        </div>
+        <iframe title="Certificat QUALIOPI" class="w-full grow border-0 bg-white"></iframe>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button aria-label="Fermer">close</button>
+    </form>
+</dialog>

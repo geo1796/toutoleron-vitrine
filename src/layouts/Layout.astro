@@ -101,5 +101,39 @@ if (typeof window !== "undefined") {
         .forEach((el) => revealObserver.observe(el));
 }
 </script>
+
+<script>
+if (typeof window !== "undefined") {
+    // === VISIONNEUSES PDF =======================================
+    // Le contenu de l'iframe n'est chargé qu'à l'ouverture de la
+    // boîte de dialogue (daisyUI garde le modal affiché, ce qui
+    // déclencherait sinon le téléchargement du PDF à chaque page).
+
+    document
+        .querySelectorAll<HTMLDialogElement>("dialog[data-pdf-src]")
+        .forEach((dialog) => {
+            const iframe = dialog.querySelector("iframe");
+            const src = dialog.dataset.pdfSrc;
+            if (!iframe || !src) return;
+
+            const sync = () => {
+                if (dialog.open) {
+                    if (iframe.getAttribute("src") !== src) {
+                        iframe.setAttribute("src", src);
+                    }
+                } else if (iframe.hasAttribute("src")) {
+                    iframe.removeAttribute("src");
+                }
+            };
+
+            new MutationObserver(sync).observe(dialog, {
+                attributes: true,
+                attributeFilter: ["open"],
+            });
+
+            sync();
+        });
+}
+</script>
 </body>
 </html>

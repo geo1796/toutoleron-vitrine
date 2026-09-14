@@ -1,6 +1,8 @@
 ---
 import Logo from "../assets/logos/TOUTOLERON_Logotype_blanc.svg";
 import ArrowMenu from "../assets/svg/arrow-menu.svg";
+import Programme3hUrl from "../assets/programmes/programme_3h.pdf?url";
+import Programme5hUrl from "../assets/programmes/programme_5h.pdf?url";
 ---
 
 <div class="pt-2 px-2 md:px-16">
@@ -38,6 +40,28 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
 
         <div class="flex grow justify-end">
             <div class="flex items-stretch">
+
+                <div class="dropdown dropdown-center">
+                    <div tabindex="0" role="button"
+                         class="btn btn-link link-hover text-accent-content text-md">
+                        Formations
+                        <img class="h-3 w-3" src={ArrowMenu.src} alt="Voir les formations"/>
+                    </div>
+                    <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
+                        <li>
+                            <button type="button" class="hover:link"
+                                    onclick="document.getElementById('programme-3h-modal').showModal()">
+                                Programme 3h
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="hover:link"
+                                    onclick="document.getElementById('programme-5h-modal').showModal()">
+                                Programme 5h
+                            </button>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="dropdown dropdown-center">
                     <div tabindex="0" role="button"
@@ -85,4 +109,35 @@ import ArrowMenu from "../assets/svg/arrow-menu.svg";
             </div>
         </div>
     </div>
+
+    <!-- Visionneuses PDF des programmes de formation -->
+    <dialog id="programme-3h-modal" class="modal" data-pdf-src={Programme3hUrl}>
+        <div class="modal-box w-11/12 max-w-5xl h-[85vh] p-0 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between gap-4 p-3 border-b border-base-300">
+                <h3 class="font-bold text-lg">Programme 3h</h3>
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost" aria-label="Fermer">✕</button>
+                </form>
+            </div>
+            <iframe title="Programme 3h" class="w-full grow border-0 bg-white"></iframe>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button aria-label="Fermer">close</button>
+        </form>
+    </dialog>
+
+    <dialog id="programme-5h-modal" class="modal" data-pdf-src={Programme5hUrl}>
+        <div class="modal-box w-11/12 max-w-5xl h-[85vh] p-0 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between gap-4 p-3 border-b border-base-300">
+                <h3 class="font-bold text-lg">Programme 5h</h3>
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost" aria-label="Fermer">✕</button>
+                </form>
+            </div>
+            <iframe title="Programme 5h" class="w-full grow border-0 bg-white"></iframe>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button aria-label="Fermer">close</button>
+        </form>
+    </dialog>
 </div>
