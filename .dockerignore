@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.github
+.vscode
+.junie
+README.md
+.gitignore
+.env
+.env.local
