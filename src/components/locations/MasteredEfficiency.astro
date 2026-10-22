@@ -2,6 +2,7 @@
 import Logo from "../../assets/logos/TOUTOLERON_Embleme_blanc.svg";
 import CheckIcon from "../../assets/svg/check.svg";
 import Arrow2 from "../../assets/svg/arrow-02.svg";
+import BookingCTA from "../BookingCTA.astro";
 
 class CardItem {
     constructor(public hint: string, public title: string, public bullets: string[] = [], public emoji: string = "") {
@@ -130,24 +131,7 @@ const cardItems: CardItem[] = [
             <!--   class="btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">-->
             <!--    Je prends rendez-vous-->
             <!--</a>-->
-            <div class="dropdown dropdown-center">
-                <div tabindex="0" role="button"
-                     class="mb-1 btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0">
-                    Je prends rendez-vous
-                </div>
-                <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
-                           target="_blank"
-                           href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
-                        Équipe commerciale
-                    </a></li>
-                    <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
-                           target="_blank"
-                           href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
-                        Équipe technique
-                    </a></li>
-                </ul>
-            </div>
+            <BookingCTA class="mb-1 btn btn-accent hover:bg-accent/80 rounded-full text-xl p-6 text-accent-content shadow-none border-0"/>
         </div>
     </div>
 </section>

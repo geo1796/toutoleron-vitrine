@@ -1,6 +1,7 @@
 ---
 import ShapeFileSVG from "../../assets/svg/shape-file-06.svg";
 import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosysteme-numerique.png";
+import BookingCTA from "../BookingCTA.astro";
 ---
 
 <section id="simplifier-ecosysteme-numerique" class="hidden md:block">
@@ -31,24 +32,7 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
                 </p>
 
                 <div data-anim="reveal" class="mt-8">
-                    <div class="dropdown dropdown-center">
-                        <div tabindex="0" role="button"
-                             class="mb-1 btn btn-primary p-6 text-xl text-primary-content rounded-full shadow-none border-0">
-                            Je prends rendez-vous
-                        </div>
-                        <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
-                            <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
-                                   target="_blank"
-                                   href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
-                                Équipe commerciale
-                            </a></li>
-                            <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
-                                   target="_blank"
-                                   href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
-                                Équipe technique
-                            </a></li>
-                        </ul>
-                    </div>
+                    <BookingCTA/>
                 </div>
             </div>
         </div>
@@ -75,24 +59,7 @@ import Hero from "../../assets/illustrations/TOUTOLERON_illu_simplifier_ecosyste
             <!--   class="btn btn-primary rounded-full p-6 text-xl text-primary-content shadow-none border-0">-->
             <!--    Je prends rendez-vous-->
             <!--</a>-->
-            <div class="dropdown dropdown-center">
-                <div tabindex="0" role="button"
-                     class="mb-1 btn btn-primary p-6 text-xl text-primary-content rounded-full shadow-none border-0">
-                    Je prends rendez-vous
-                </div>
-                <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
-                           target="_blank"
-                           href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
-                        Équipe commerciale
-                    </a></li>
-                    <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
-                           target="_blank"
-                           href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
-                        Équipe technique
-                    </a></li>
-                </ul>
-            </div>
+            <BookingCTA/>
         </div>
 
     </div>

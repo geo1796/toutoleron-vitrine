@@ -1,0 +1,25 @@
+---
+interface Props {
+    /** Libellé du bouton */
+    label?: string;
+    /** Lien de prise de rendez-vous */
+    href?: string;
+    /** Événement Plausible envoyé au clic (null pour désactiver) */
+    event?: string | null;
+    /** Classes Tailwind/DaisyUI appliquées au lien */
+    class?: string;
+}
+
+const {
+    label = "Je prends rendez-vous",
+    href = "https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled",
+    event = "booking_technique_navbar",
+    class: className = "mb-1 btn btn-primary p-6 text-xl text-primary-content rounded-full shadow-none border-0",
+} = Astro.props;
+---
+
+<a class={className}
+   target="_blank"
+   rel="noopener noreferrer"
+   onclick={event ? `plausible('${event}')` : undefined}
+   href={href}><slot>{label}</slot></a>

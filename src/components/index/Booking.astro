@@ -1,5 +1,5 @@
 ---
-
+import BookingCTA from "../BookingCTA.astro";
 ---
 
 <section id="booking">
@@ -9,23 +9,7 @@
         <!--   onclick="plausible('cta_booking')"-->
         <!--   href='https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled'>Prenez-->
         <!--    rendez-vous</a>-->
-        <div class="dropdown dropdown-center">
-            <div tabindex="0" role="button"
-                 class="mb-1 btn btn-primary text-primary-content text-xl p-6 rounded-full shadow-none border-0">
-                Prenez rendez-vous
-            </div>
-            <ul class="menu text-accent-content dropdown-content bg-accent rounded-box z-1 w-52 p-2 shadow-sm">
-                <li><a class="hover:link" onclick="plausible('booking_commerciale_navbar')"
-                       target="_blank"
-                       href="https://outlook.office.com/book/CommercialToutolron@toutoleron.com/?ismsaljsauthenabled">
-                    Équipe commerciale
-                </a></li>
-                <li><a class="hover:link" onclick="plausible('booking_technique_navbar')"
-                       target="_blank"
-                       href="https://outlook.office.com/book/quipetechnique@toutoleron.com/?ismsaljsauthenabled">
-                    Équipe technique
-                </a></li>
-            </ul>
-        </div>
+        <BookingCTA class="mb-1 btn btn-primary text-primary-content text-xl p-6 rounded-full shadow-none border-0"
+                    label="Prenez rendez-vous"/>
     </div>
 </section>
